@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Unidad V - Inicio</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <div class="wrapper">
+    <!-- ===================== HEADER ===================== -->
+    <header class="site-header">
+      <div class="header-inner">
+        <div class="logos">
+          <!-- === LOGO IZQUIERDO: ESCUELA === -->
+          <!-- Coloca aquí tu primer logo, por ejemplo:
+               <img src="ruta/a/tu_logo1.png" alt="Logo ESCOM"> -->
+          <img src="../assets/logo1.png" alt="Logo ESCOM" />
+          <!-- === LOGO DERECHO: IPN O CARRERA === -->
+          <!-- Coloca aquí tu segundo logo:
+               <img src="ruta/a/tu_logo2.png" alt="Logo IPN"> -->
+          <img src="../assets/logo2.png" alt="Logo IPN" />
+        </div>
+        <div class="datos-escuela">
+          <!-- === DATOS DE LA ESCUELA / CARRERA / MATERIA / UNIDAD === -->
+          <span class="linea">Instituto Politécnico Nacional</span>
+          <span class="linea">Escuela Superior de Cómputo (ESCOM)</span>
+          <span class="linea">Ingeniería en Sistemas Computacionales</span>
+          <span class="linea">Materia: Sistemas Operativos</span>
+          <span class="linea">Unidad V: Nombre general de la Unidad V</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- ===================== NAV PRINCIPAL ===================== -->
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="#" id="btnMostrarIndice">Índice</a></li>
+        <li><a href="referencias.html">Referencias</a></li>
+      </ul>
+    </nav>
+
+    <!-- ===================== BARRA LATERAL (ÍNDICE) ===================== -->
+    <div class="main-container">
+      <aside class="sidebar collapsed">
+        <!-- Botón para mostrar/ocultar la barra lateral -->
+        <button class="toggle-btn">☰ Índice</button>
+        <ul class="indice-list">
+          <!-- Coloca aquí los enlaces a tus páginas: inicio, cada tema/subtema y referencia -->
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="temas/tema1.html">Tema 1: …</a></li>
+          <li><a href="temas/tema2.html">Tema 2: …</a></li>
+          <li><a href="temas/tema3.html">Tema 3: …</a></li>
+          <!-- … más temas … -->
+          <li><a href="referencias.html">Referencias</a></li>
+        </ul>
+      </aside>
+
+      <!-- ===================== ÁREA DE CONTENIDO ===================== -->
+      <main class="content-area">
+        <h1 class="page-title">Bienvenida a la Unidad V</h1>
+
+        <div class="row">
+          <!-- COLUMNA IZQUIERDA: TEXTO DE INICIO -->
+          <div class="col-6">
+            <!-- ================= TEXTO DE BIENVENIDA / INSTRUCCIONES ================= -->
+            <!-- Aquí coloca párrafos, listas u otro contenido textual que desees para la página de Inicio -->
+            <p>
+              <!-- TEXTO INTRODUCTORIO: -->
+              Bienvenido(a) a la Unidad V de la materia Sistemas Operativos. En esta unidad profundizaremos en…
+            </p>
+            <p>
+              <!-- Puedes agregar más párrafos, listas, etc. -->
+            </p>
+          </div>
+
+          <!-- COLUMNA DERECHA: IMAGEN PRINCIPAL DE INICIO -->
+          <div class="col-6">
+            <!-- Aquí coloca una imagen grande (por ej. un banner) -->
+            <!-- <img src="ruta/a/tu_imagen_grande.jpg" alt="Imagen de la Unidad V" style="width:100%; border-radius:8px;"> -->
+            <div style="width:100%; text-align:center;">
+              <!-- Sustituye el div por un <img> con la ruta que quieras -->
+              <img src="assets/imagen_inicio.jpg" alt="Imagen Inicio Unidad V" style="max-width:100%; border-radius:8px;" />
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="site-footer">
+      <div class="footer-text">
+        Unidad V - Nombre de la unidad (hecho por: [TU NOMBRE]) • Fecha de elaboración: [DD/MM/AAAA]
+      </div>
+    </footer>
+  </div>
+
+  <!-- ==== INCLUIMOS EL SCRIPT GENERAL ==== -->
+  <script src="../js/scripts.js"></script>
+</body>
+</html>

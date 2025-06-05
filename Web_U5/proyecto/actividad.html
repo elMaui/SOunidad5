@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Actividad Tema 1</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <div class="wrapper">
+    <!-- ===================== HEADER ===================== -->
+    <header class="site-header">
+      <div class="header-inner">
+        <div class="logos">
+          <img src="assets/logo1.png" alt="Logo ESCOM" />
+          <img src="assets/logo2.png" alt="Logo IPN" />
+        </div>
+        <div class="datos-escuela">
+          <span class="linea">Instituto Politécnico Nacional</span>
+          <span class="linea">Escuela Superior de Cómputo (ESCOM)</span>
+          <span class="linea">Ingeniería en Sistemas Computacionales</span>
+          <span class="linea">Materia: Sistemas Operativos</span>
+          <span class="linea">Unidad V: [Nombre de la Unidad]</span>
+          <span class="linea">Actividad: Tema 1</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- ===================== NAV PRINCIPAL ===================== -->
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="#" id="btnMostrarIndice">Índice</a></li>
+        <li><a href="referencias.html">Referencias</a></li>
+      </ul>
+    </nav>
+
+    <!-- ===================== BARRA LATERAL (ÍNDICE) ===================== -->
+    <div class="main-container">
+      <aside class="sidebar collapsed">
+        <button class="toggle-btn">☰ Índice</button>
+        <ul class="indice-list">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="temas/tema1.html">Tema 1</a></li>
+          <li><a href="temas/tema2.html">Tema 2</a></li>
+          <!-- … más temas … -->
+          <li><a href="referencias.html">Referencias</a></li>
+        </ul>
+      </aside>
+
+      <!-- ===================== ÁREA DE CONTENIDO ===================== -->
+      <main class="content-area">
+        <h1 class="page-title">Actividad del Tema 1</h1>
+
+        <!-- ======== TEMPORIZADOR ======== -->
+        <div style="margin-bottom: 20px;">
+          <strong>Tiempo restante:</strong> <span id="reloj">05:00</span>
+        </div>
+
+        <!-- ======== PREGUNTAS (Ejemplo de cuestionario) ======== -->
+        <form id="form-actividad">
+          <!-- Pregunta 1 (opciones tipo radio) -->
+          <div style="margin-bottom: 15px;">
+            <p>1. ¿Cuál de las siguientes extensiones corresponde a un archivo de texto plano?</p>
+            <label>
+              <input type="radio" name="pregunta1" class="respuesta" data-correcto="falso" value="a" />
+              .exe
+            </label><br />
+            <label>
+              <input type="radio" name="pregunta1" class="respuesta" data-correcto="verdadero" value="b" />
+              .txt
+            </label><br />
+            <label>
+              <input type="radio" name="pregunta1" class="respuesta" data-correcto="falso" value="c" />
+              .jpg
+            </label><br />
+          </div>
+
+          <!-- Pregunta 2 (checkbox ejemplo) -->
+          <div style="margin-bottom: 15px;">
+            <p>2. Selecciona las codificaciones de texto válidas:</p>
+            <label>
+              <input type="checkbox" name="pregunta2" class="respuesta" data-correcto="verdadero" value="a" />
+              ASCII
+            </label><br />
+            <label>
+              <input type="checkbox" name="pregunta2" class="respuesta" data-correcto="verdadero" value="b" />
+              UTF-8
+            </label><br />
+            <label>
+              <input type="checkbox" name="pregunta2" class="respuesta" data-correcto="falso" value="c" />
+              CIFS
+            </label><br />
+          </div>
+
+          <!-- Botón para validar respuestas -->
+          <input type="button" value="Validar respuestas" id="btnValidar" />
+
+          <!-- Caja donde se mostrará el resultado -->
+          <div class="resultado-actividad" style="margin-top: 10px; font-weight: bold;"></div>
+        </form>
+
+        <!-- ======== BOTÓN REINICIAR ======== -->
+        <button id="btnReiniciar">Reiniciar Actividad</button>
+      </main>
+    </div>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="site-footer">
+      <div class="footer-text">
+        Unidad V – Actividad Tema 1 • Hecho por: [TU NOMBRE] • Fecha: [DD/MM/AAAA]
+      </div>
+    </footer>
+  </div>
+
+  <script src="../js/scripts.js"></script>
+  <script>
+    // Cuando el documento esté listo, iniciamos el temporizador:
+    document.addEventListener("DOMContentLoaded", function () {
+      const reloj = document.getElementById("reloj");
+      // Ajusta 300 segundos (5 minutos) al gusto:
+      iniciarTemporizador(300, reloj, function () {
+        alert("¡Se terminó el tiempo!");
+        // Opcional: deshabilitar el botón “Validar” al acabarse el tiempo
+        document.getElementById("btnValidar").disabled = true;
+      });
+
+      // Evento para validar respuestas
+      document.getElementById("btnValidar").addEventListener("click", function () {
+        const { correctas, totales } = validarRespuestas();
+        const resultadoBox = document.querySelector(".resultado-actividad");
+        resultadoBox.textContent = `Obtuviste ${correctas} de ${totales} correctas.`;
+        // Puedes añadir lógica de puntajes extra aquí
+      });
+
+      // Evento para reiniciar la actividad
+      document.getElementById("btnReiniciar").addEventListener("click", function () {
+        reiniciarActividad("#form-actividad");
+        // Reiniciar temporizador (opcional):
+        clearInterval(); // si deseas parar el anterior
+        iniciarTemporizador(300, reloj, function () {
+          alert("¡Se terminó el tiempo!");
+          document.getElementById("btnValidar").disabled = true;
+        });
+      });
+    });
+  </script>
+</body>
+</html>
