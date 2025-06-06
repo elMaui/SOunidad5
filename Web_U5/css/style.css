@@ -39,38 +39,88 @@ body {
 }
 
 /* ==== HEADER (LOGOS + DATOS ESCUELA) ==== */
-header.site-header {
-  background-color: var(--color-principal);
-  color: white;
-  padding: 10px 20px;
-}
+/* ───────────────────────────────────────────────────────────── */
+/*                 style.css (A PARTIR DEL HEADER)             */
+/* ───────────────────────────────────────────────────────────── */
+
+/* ───────────────────────────────────────────────────────────── */
+/*                 Ajustes para centrar texto en el header      */
+/* ───────────────────────────────────────────────────────────── */
+
+/* 1) Hacemos que el contenedor interno .header-inner sea RELATIVE. */
 header.site-header .header-inner {
+  position: relative;              /* Para que los hijos en absolute se posicionen sobre él */
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  align-items: center;             /* Centrar verticalmente logos */
+  justify-content: space-between;  /* Mantiene logos a los extremos */
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 20px;
 }
-header.site-header .logos {
-  display: flex;
-  align-items: center;
+
+/* 2) Convertimos .header-text en ABSOLUTE y lo centramos con left:50% + translateX(-50%) */
+.header-text {
+  position: absolute;              /* Saca el texto del flujo flex y permite centrarlo al 50% */
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;              /* Centra cada <p> dentro del bloque */
+  /* Eliminamos flex:1 y márgenes horizontales, ahora no los necesitamos */
+  /* flex: 1; */
+  /* margin: 0 20px; */
+  line-height: 1.2;
 }
-header.site-header .logos img {
-  height: 60px;
-  margin-right: 15px;
-}
-header.site-header .datos-escuela {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-header.site-header .datos-escuela .linea {
-  font-size: 14px;
+
+/* 3) Ajuste de cada línea de texto en el header */
+.header-text p {
+  font-size: 20px;
+  margin: 5px 0;
   font-weight: 500;
-  margin: 2px 0;
 }
+
+/* 4) Los logos siguen igual (alineados con flexbox a la izquierda/derecha) */
+.logo-left img {
+  height: 125px;
+  width: auto;
+}
+
+.logo-right img {
+  height: 135px;
+  width: auto;
+}
+
+/* 5) Mantén el height del header según lo tenías (por ejemplo 140px) */
+header.site-header {
+  background-color: #0D4F8B;
+  color: white;
+  height: 170px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+/* 6) En pantallas pequeñas, permitimos que el texto baje debajo de los logos */
+@media screen and (max-width: 768px) {
+  header.site-header {
+    height: auto;
+    padding: 20px 0;
+  }
+  header.site-header .header-inner {
+    flex-direction: column;
+    position: relative; /* sigue siendo relative para el texto absoluto */
+  }
+  .header-text {
+    position: static;    /* en móvil, ya no usamos absolute */
+    transform: none;
+    margin: 15px 0;      /* espacio vertical entre logos */
+  }
+}
+
 
 /* ==== BARRA DE NAVEGACIÓN PRINCIPAL ==== */
 nav.main-nav {
-  background-color: #fff;
+  background-color: #9ecffa;
   border-bottom: 2px solid var(--color-principal);
 }
 nav.main-nav ul {

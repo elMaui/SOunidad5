@@ -13,6 +13,15 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  // ====== Toggle de la sidebar desde el enlace "Índice" del nav ======
+  const linkIndice = document.getElementById("btnMostrarIndice");
+  if (linkIndice && sidebar) {
+    linkIndice.addEventListener("click", function (event) {
+      event.preventDefault();           // Evita que el enlace recargue la página
+      sidebar.classList.toggle("collapsed");
+    });
+  }
+
   /* ------------- ACORDEÓN (mostrar/ocultar paneles) ------------- */
   const accordions = document.querySelectorAll(".accordion");
   accordions.forEach((acc) => {
