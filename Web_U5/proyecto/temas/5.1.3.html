@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tema 1 — Nombre del tema</title>
+  <title>5.1.3 Interrupciones</title>
   <link rel="stylesheet" href="../../css/style.css" />
 </head>
 <body>
@@ -79,7 +79,7 @@
 
       <!-- ===================== ÁREA DE CONTENIDO ===================== -->
       <main class="content-area">
-        <h1 class="page-title">5.1.3 [Nombre del Tema]</h1>
+        <h1 class="page-title">5.1.3 Interrupciones</h1>
 
         <!-- ================ CONTENIDO DEL TEMA ================ -->
         <!-- Aquí pegas tu investigación: texto, imágenes, videos, tablas, etc. -->
@@ -87,91 +87,91 @@
 
         <!-- == PÁRRAFOS DE TEXTO == -->
         <p>
-          En este tema veremos los aspectos fundamentales de …
+          El mecanismo de interrupciones permite que el CPU responda a eventos asíncronos, como cuando un dispositivo necesita atención. El CPU detecta una señal en la línea de petición de interrupción, guarda su estado, salta a una rutina especial llamada manejador de interrupciones, atiende el evento y luego retoma la ejecución previa.
         </p>
         <p>
           <!-- Más texto… -->
         </p>
 
-        <!-- == IMAGEN ILUSTRATIVA == -->
-        <div style="margin: 20px 0; text-align: center;">
-          <!-- Pon aquí la imagen con tu ruta, por ejemplo:
-               <img src="../assets/tema1/diagrama.png" alt="Diagrama Tema 1" style="max-width:100%; border-radius:6px;">
-          -->
-          <img src="../assets/tema1/imagen_ejemplo.jpg" alt="Imagen Tema 1" style="max-width:100%; border-radius:6px;" />
-        </div>
+        
 
         <!-- == VIDEO EMBEBIDO == -->
         <!-- Por ejemplo, si tienes un video en YouTube, usa esto: -->
         <div style="margin: 20px 0; text-align: center;">
-          <iframe width="560" height="315"
-            src="https://www.youtube.com/embed/CÓDIGO_VIDEO"
-            title="Video Tema 1"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-          </iframe>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/vusZZtiVBqs?si=8mZOfXPo5RSg0Oq3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
 
-        <!-- == TABLA EJEMPLO == -->
-        <h2 class="subtitulo">Tabla 1.1 – Descripción de las Extensiones</h2>
-        <table>
+        
+        <h2 class="subtitulo">Tipos de Interrupciones</h2>
+        <!-- == ACORDEÓN: BOTÓN PARA MOSTRAR DETALLES ADICIONALES == -->
+        <button class="accordion">Las interrupciones pueden clasificarse en:</button>
+        <div class="panel">
+          <p>
+             </p>
+           <table>
           <thead>
             <tr>
-              <th>Extensión</th>
+              <th>Tipo</th>
               <th>Descripción</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>.c</td>
-              <td>Archivo fuente en C</td>
+              <td>No enmascarables</td>
+              <td>para errores críticos como fallos de memoria.</td>
             </tr>
             <tr>
-              <td>.txt</td>
-              <td>Archivo de texto plano</td>
+              <td>Enmascarables</td>
+              <td>pueden desactivarse temporalmente para evitar interrupciones durante operaciones críticas.</td>
             </tr>
             <!-- Agrega más filas según lo necesites -->
           </tbody>
         </table>
-
-        <!-- == ACORDEÓN: BOTÓN PARA MOSTRAR DETALLES ADICIONALES == -->
-        <button class="accordion">Ver más detalles sobre X</button>
-        <div class="panel">
-          <p>
-            <!-- Aquí dentro colocas el texto que mostrará/ocultará al hacer clic en “Ver más detalles sobre X” -->
-            Estos son detalles adicionales sobre el tema…
-          </p>
         </div>
 
+        <h2 class="subtitulo">Interrupciones vectoreadas</h2>
+        <p>
+                    se usa una tabla (vector de interrupciones) con direcciones de manejadores específicos, evitando tener que revisar todos los dispositivos.	Si hay más dispositivos que entradas en el vector, se usa encadenamiento de interrupciones, donde cada entrada enlaza a varios manejadores.
+                  </p> 
+        <h2 class="subtitulo">Priorización</h2>
+        <p>
+                  el sistema puede clasificar interrupciones por niveles de prioridad para que las más importantes se atiendan primero.
+                  </p>
+
+        <h2 class="subtitulo">Trampas (software interrupts)</h2>
+        <p>
+        se usan para eventos como fallos de página o errores como división por cero. También son utilizadas por llamadas al sistema hechas por programas.
+        </p>
+         <h2 class="subtitulo">Ejecución y manejo</h2>
+        <!-- == ACORDEÓN: BOTÓN PARA MOSTRAR DETALLES ADICIONALES == -->
+        <button class="accordion">El sistema utiliza estos métodos para el manejo de las interrupciones:</button>
+        <div class="panel">
+          <p>
+             </p>
+           <table>
+          <tbody>
+            <tr>
+              <td>Manejadores de interrupciones en dos niveles</td>
+              <td>
+                <p>- FLIH (First-Level Interrupt Handler): realiza el cambio de contexto y registra la interrupción.</p>
+                <p>- SLIH (Second-Level Interrupt Handler): se encarga del trabajo completo, como copiar datos o finalizar una operación.</p>
+              </td>
+            </tr>
+            <tr>
+              <td>Aplicaciones del mecanismo de interrupciones</td>
+              <td><p>- Manejo de errores, memoria virtual (fallos de página), llamadas al sistema y control de flujos en el kernel.</p>
+              <p>- En operaciones como la lectura de disco, se usan varios niveles de interrupciones para balancear urgencia y eficiencia.</p></td>
+            </tr>
+            <tr>
+              <td>Ejemplo: Solaris</td>
+              <td><p>usa hilos del núcleo para manejar interrupciones con diferentes prioridades, permitiendo ejecución concurrente en sistemas multiprocesador y priorizando tareas críticas.</p></td>
+            <!-- Agrega más filas según lo necesites -->
+          </tbody>
+        </table>
+        </div>
         <!-- ============== FIN DEL CONTENIDO DEL TEMA ============== -->
 
-        <!-- ============== BARRA DE NAVEGACIÓN ENTRE SUBTEMAS ============== -->
-        <div style="margin-top: 30px; border-top: 1px solid #ccc; padding-top: 15px;">
-          <button class="accordion">Subtema 1.1: Nombre</button>
-          <div class="panel">
-            <p>
-              <!-- Breve descripción o enlace →-->
-              <a href="subtema1_1.html">Ir a Subtema 1.1</a>
-            </p>
-          </div>
-
-          <button class="accordion">Subtema 1.2: Nombre</button>
-          <div class="panel">
-            <p>
-              <a href="subtema1_2.html">Ir a Subtema 1.2</a>
-            </p>
-          </div>
-
-          <!-- Agrega tantos subtemas (botón + panel) como necesites -->
-
-          <!-- Enlace a la actividad de este tema -->
-          <button class="accordion">Actividad del Tema 1</button>
-          <div class="panel">
-            <p>
-              <a href="../actividad.html">Ir a Actividad</a>
-            </p>
-          </div>
+        
 
           <!-- Navegación “Anterior / Siguiente Tema” -->
           <div style="margin-top: 20px; display: flex; justify-content: space-between;">

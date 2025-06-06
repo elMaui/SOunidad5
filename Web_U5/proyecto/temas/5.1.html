@@ -9,24 +9,36 @@
 <body>
   <div class="wrapper">
     <!-- ===================== HEADER ===================== -->
-    <header class="site-header">
-      <div class="header-inner">
-        <div class="logos">
-          <!-- Logo ESCOM -->
-          <img src="../../assets/logo1.png" alt="Logo ESCOM" />
-          <!-- Logo IPN u otro -->
-          <img src="../../assets/logo2.png" alt="Logo IPN" />
-        </div>
-        <div class="datos-escuela">
-          <span class="linea">Instituto Politécnico Nacional</span>
-          <span class="linea">Escuela Superior de Cómputo (ESCOM)</span>
-          <span class="linea">Ingeniería en Sistemas Computacionales</span>
-          <span class="linea">Materia: Sistemas Operativos</span>
-          <span class="linea">Unidad V: Dispositivos de Entrada y Salida</span>
-          <span class="linea">5.1 Principios del hardware de E/S</span>
-        </div>
-      </div>
-    </header>
+<header class="site-header">
+  <div class="header-inner">
+    <!-- --------------------------------------------
+         LOGO IZQUIERDO (clase .logo-left)
+         -------------------------------------------- -->
+    <div class="logo-left">
+      <!-- Cambia src="assets/logo-escom.png" por tu ruta real -->
+      <img src="../../assets/logo1.png" alt="Logo ESCOM" />
+    </div>
+
+    <!-- --------------------------------------------
+         TEXTO CENTRADO (clase .header-text)
+         -------------------------------------------- -->
+    <div class="header-text">
+      <p>Instituto Politécnico Nacional</p>
+      <p>Escuela Superior de Cómputo</p>
+      <p>Ingeniería en Sistemas Computacionales</p>
+      <p>Sistemas Operativos</p>
+      <p>Unidad V: Dispositivos de Entrada y Salida</p>
+    </div>
+
+    <!-- --------------------------------------------
+         LOGO DERECHO (clase .logo-right)
+         -------------------------------------------- -->
+    <div class="logo-right">
+      <!-- Cambia src="assets/logo-ipn.png" por tu ruta real -->
+      <img src="../../assets/logo2.png" alt="Logo IPN" />
+    </div>
+  </div>
+</header>
 
     <!-- ===================== NAV PRINCIPAL ===================== -->
     <nav class="main-nav">
@@ -67,7 +79,7 @@
 
       <!-- ===================== ÁREA DE CONTENIDO ===================== -->
       <main class="content-area">
-        <h1 class="page-title">5.1 [Nombre del Tema]</h1>
+        <h1 class="page-title">5.1 Principios del hardware de E/S</h1>
 
         <!-- ================ CONTENIDO DEL TEMA ================ -->
         <!-- Aquí pegas tu investigación: texto, imágenes, videos, tablas, etc. -->
@@ -75,91 +87,47 @@
 
         <!-- == PÁRRAFOS DE TEXTO == -->
         <p>
-          En este tema veremos los aspectos fundamentales de …
+          El control de los dispositivos conectados a una computadora es una preocupación clave para los diseñadores de sistemas operativos. Debido a la gran variedad de funciones y velocidades de los dispositivos de E/S (como un ratón, un disco duro o un robot de cinta), se necesitan métodos diferentes para controlarlos. Estos métodos conforman el subsistema de E/S del núcleo (kernel), que aísla al resto del sistema operativo de la complejidad del manejo de dispositivos.
         </p>
-        <p>
-          <!-- Más texto… -->
-        </p>
-
-        <!-- == IMAGEN ILUSTRATIVA == -->
-        <div style="margin: 20px 0; text-align: center;">
-          <!-- Pon aquí la imagen con tu ruta, por ejemplo:
-               <img src="../assets/tema1/diagrama.png" alt="Diagrama Tema 1" style="max-width:100%; border-radius:6px;">
-          -->
-          <img src="../assets/tema1/imagen_ejemplo.jpg" alt="Imagen Tema 1" style="max-width:100%; border-radius:6px;" />
-        </div>
+       
 
         <!-- == VIDEO EMBEBIDO == -->
         <!-- Por ejemplo, si tienes un video en YouTube, usa esto: -->
         <div style="margin: 20px 0; text-align: center;">
-          <iframe width="560" height="315"
-            src="https://www.youtube.com/embed/CÓDIGO_VIDEO"
-            title="Video Tema 1"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-          </iframe>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/I2RMjXW8Hu8?si=nhdTKPpFVQzbGuoJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
 
         <!-- == TABLA EJEMPLO == -->
-        <h2 class="subtitulo">Tabla 1.1 – Descripción de las Extensiones</h2>
+        <h2 class="subtitulo">Problemática del mercado de Hardware de Entrada y Salida</h2>
+         <p>
+          Existen dos tendencias opuestas en la tecnología de E/S:
+        </p>
         <table>
           <thead>
             <tr>
-              <th>Extensión</th>
+              <th>Tendencia</th>
               <th>Descripción</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>.c</td>
-              <td>Archivo fuente en C</td>
+              <td>1.	Estandarización creciente</td>
+              <td>Estandarización creciente de interfaces de hardware y software, lo que facilita integrar nuevas generaciones de dispositivos.</td>
             </tr>
             <tr>
-              <td>.txt</td>
-              <td>Archivo de texto plano</td>
+              <td>2.	Aumento en la diversidad</td>
+              <td>Aumento en la diversidad de dispositivos, algunos tan distintos que su integración es compleja.</td>
             </tr>
             <!-- Agrega más filas según lo necesites -->
           </tbody>
         </table>
 
-        <!-- == ACORDEÓN: BOTÓN PARA MOSTRAR DETALLES ADICIONALES == -->
-        <button class="accordion">Ver más detalles sobre X</button>
-        <div class="panel">
-          <p>
-            <!-- Aquí dentro colocas el texto que mostrará/ocultará al hacer clic en “Ver más detalles sobre X” -->
-            Estos son detalles adicionales sobre el tema…
-          </p>
-        </div>
+        <p> Para enfrentar este reto, se combinan técnicas de hardware (como puertos, buses y controladores) y software. El sistema operativo utiliza controladores de dispositivos (device drivers), que encapsulan los detalles específicos de cada dispositivo y ofrecen una interfaz uniforme de acceso, al igual que las llamadas al sistema lo hacen entre aplicaciones y el sistema operativo.</p>
+
 
         <!-- ============== FIN DEL CONTENIDO DEL TEMA ============== -->
 
-        <!-- ============== BARRA DE NAVEGACIÓN ENTRE SUBTEMAS ============== -->
-        <div style="margin-top: 30px; border-top: 1px solid #ccc; padding-top: 15px;">
-          <button class="accordion">Subtema 1.1: Nombre</button>
-          <div class="panel">
-            <p>
-              <!-- Breve descripción o enlace →-->
-              <a href="subtema1_1.html">Ir a Subtema 1.1</a>
-            </p>
-          </div>
-
-          <button class="accordion">Subtema 1.2: Nombre</button>
-          <div class="panel">
-            <p>
-              <a href="subtema1_2.html">Ir a Subtema 1.2</a>
-            </p>
-          </div>
-
-          <!-- Agrega tantos subtemas (botón + panel) como necesites -->
-
-          <!-- Enlace a la actividad de este tema -->
-          <button class="accordion">Actividad del Tema 1</button>
-          <div class="panel">
-            <p>
-              <a href="../actividad.html">Ir a Actividad</a>
-            </p>
-          </div>
+        
 
           <!-- Navegación “Anterior / Siguiente Tema” -->
           <div style="margin-top: 20px; display: flex; justify-content: flex-end;">
@@ -177,7 +145,7 @@
     <!-- ===================== FOOTER ===================== -->
     <footer class="site-footer">
       <div class="footer-text">
-        Unidad V - Dispositivos de Entrada y Salida • Hecho por: Núñez Anrubio Jonathan M. & Peña Razo Christian Y. • Fecha de elaboración: [06/Jun/2025]
+        Unidad V - Dispositivos de Entrada y Salida (hecho por: Núñez Anrubio Jonathan M. & Peña Razo Christian Y.) • Fecha de elaboración: [6/Jun/2025]
       </div>
     </footer>
   </div>
