@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>5.1 Principios del hardware de E/S</title>
+  <title>Tema 1 — Nombre del tema</title>
   <link rel="stylesheet" href="../../css/style.css" />
 </head>
 <body>
@@ -79,7 +79,7 @@
 
       <!-- ===================== ÁREA DE CONTENIDO ===================== -->
       <main class="content-area">
-        <h1 class="page-title">5.1 Principios del hardware de E/S</h1>
+        <h1 class="page-title">5.1 [Nombre del Tema]</h1>
 
         <!-- ================ CONTENIDO DEL TEMA ================ -->
         <!-- Aquí pegas tu investigación: texto, imágenes, videos, tablas, etc. -->
@@ -87,56 +87,98 @@
 
         <!-- == PÁRRAFOS DE TEXTO == -->
         <p>
-          El control de los dispositivos conectados a una computadora es una preocupación clave para los diseñadores de sistemas operativos. Debido a la gran variedad de funciones y velocidades de los dispositivos de E/S (como un ratón, un disco duro o un robot de cinta), se necesitan métodos diferentes para controlarlos. Estos métodos conforman el subsistema de E/S del núcleo (kernel), que aísla al resto del sistema operativo de la complejidad del manejo de dispositivos.
+          En este tema veremos los aspectos fundamentales de …
         </p>
-       
+        <p>
+          <!-- Más texto… -->
+        </p>
+
+        <!-- == IMAGEN ILUSTRATIVA == -->
+        <div style="margin: 20px 0; text-align: center;">
+          <!-- Pon aquí la imagen con tu ruta, por ejemplo:
+               <img src="../assets/tema1/diagrama.png" alt="Diagrama Tema 1" style="max-width:100%; border-radius:6px;">
+          -->
+          <img src="../assets/tema1/imagen_ejemplo.jpg" alt="Imagen Tema 1" style="max-width:100%; border-radius:6px;" />
+        </div>
 
         <!-- == VIDEO EMBEBIDO == -->
         <!-- Por ejemplo, si tienes un video en YouTube, usa esto: -->
         <div style="margin: 20px 0; text-align: center;">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/I2RMjXW8Hu8?si=nhdTKPpFVQzbGuoJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <iframe width="560" height="315"
+            src="https://www.youtube.com/embed/CÓDIGO_VIDEO"
+            title="Video Tema 1"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
         </div>
 
         <!-- == TABLA EJEMPLO == -->
-        <h2 class="subtitulo">Problemática del mercado de Hardware de Entrada y Salida</h2>
-         <p>
-          Existen dos tendencias opuestas en la tecnología de E/S:
-        </p>
+        <h2 class="subtitulo">Tabla 1.1 – Descripción de las Extensiones</h2>
         <table>
           <thead>
             <tr>
-              <th>Tendencia</th>
+              <th>Extensión</th>
               <th>Descripción</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>1.	Estandarización creciente</td>
-              <td>Estandarización creciente de interfaces de hardware y software, lo que facilita integrar nuevas generaciones de dispositivos.</td>
+              <td>.c</td>
+              <td>Archivo fuente en C</td>
             </tr>
             <tr>
-              <td>2.	Aumento en la diversidad</td>
-              <td>Aumento en la diversidad de dispositivos, algunos tan distintos que su integración es compleja.</td>
+              <td>.txt</td>
+              <td>Archivo de texto plano</td>
             </tr>
             <!-- Agrega más filas según lo necesites -->
           </tbody>
         </table>
 
-        <p> Para enfrentar este reto, se combinan técnicas de hardware (como puertos, buses y controladores) y software. El sistema operativo utiliza controladores de dispositivos (device drivers), que encapsulan los detalles específicos de cada dispositivo y ofrecen una interfaz uniforme de acceso, al igual que las llamadas al sistema lo hacen entre aplicaciones y el sistema operativo.</p>
+        <!-- == ACORDEÓN: BOTÓN PARA MOSTRAR DETALLES ADICIONALES == -->
+        <button class="accordion">Ver más detalles sobre X</button>
+        <div class="panel">
+          <p>
+            <!-- Aquí dentro colocas el texto que mostrará/ocultará al hacer clic en “Ver más detalles sobre X” -->
+            Estos son detalles adicionales sobre el tema…
+          </p>
         </div>
 
         <!-- ============== FIN DEL CONTENIDO DEL TEMA ============== -->
 
-        
+        <!-- ============== BARRA DE NAVEGACIÓN ENTRE SUBTEMAS ============== -->
+        <div style="margin-top: 30px; border-top: 1px solid #ccc; padding-top: 15px;">
+          <button class="accordion">Subtema 1.1: Nombre</button>
+          <div class="panel">
+            <p>
+              <!-- Breve descripción o enlace →-->
+              <a href="subtema1_1.html">Ir a Subtema 1.1</a>
+            </p>
+          </div>
+
+          <button class="accordion">Subtema 1.2: Nombre</button>
+          <div class="panel">
+            <p>
+              <a href="subtema1_2.html">Ir a Subtema 1.2</a>
+            </p>
+          </div>
+
+          <!-- Agrega tantos subtemas (botón + panel) como necesites -->
+
+          <!-- Enlace a la actividad de este tema -->
+          <button class="accordion">Actividad del Tema 1</button>
+          <div class="panel">
+            <p>
+              <a href="../actividad.html">Ir a Actividad</a>
+            </p>
+          </div>
 
           <!-- Navegación “Anterior / Siguiente Tema” -->
-          <div style="margin-top: 20px; display: flex; justify-content: space-between;">
+          <div style="margin-top: 20px; display: flex; justify-content: flex-end;">
             <!-- Si existe tema anterior, habilita el enlace; si no, déjalo deshabilitado o quítalo -->
-            <a href="5.1.html">
-              <button>&laquo; Tema Anterior</button>
-            </a>
+            
             <!-- Si existe tema siguiente -->
-            <a href="5.1.2.html">
+            <a href="5.1.1.html">
               <button>Próximo Tema &raquo;</button>
             </a>
           </div>
@@ -147,7 +189,7 @@
     <!-- ===================== FOOTER ===================== -->
     <footer class="site-footer">
       <div class="footer-text">
-        Unidad V - Dispositivos de Entrada y Salida (hecho por: Núñez Anrubio Jonathan M. & Peña Razo Christian Y.) • Fecha de elaboración: [6/Jun/2025]
+        Unidad V - Dispositivos de Entrada y Salida • Hecho por: Núñez Anrubio Jonathan M. & Peña Razo Christian Y. • Fecha de elaboración: [06/Jun/2025]
       </div>
     </footer>
   </div>
