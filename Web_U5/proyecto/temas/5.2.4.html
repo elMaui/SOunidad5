@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tema 1 — Nombre del tema</title>
+  <link rel="stylesheet" href="../../css/style.css" />
+</head>
+<body>
+  <div class="wrapper">
+    <!-- ===================== HEADER ===================== -->
+    <header class="site-header">
+      <div class="header-inner">
+        <div class="logos">
+          <!-- Logo ESCOM -->
+          <img src="../../assets/logo1.png" alt="Logo ESCOM" />
+          <!-- Logo IPN u otro -->
+          <img src="../../assets/logo2.png" alt="Logo IPN" />
+        </div>
+        <div class="datos-escuela">
+          <span class="linea">Instituto Politécnico Nacional</span>
+          <span class="linea">Escuela Superior de Cómputo (ESCOM)</span>
+          <span class="linea">Ingeniería en Sistemas Computacionales</span>
+          <span class="linea">Materia: Sistemas Operativos</span>
+          <span class="linea">Unidad V: Dispositivos de Entrada y Salida</span>
+          <span class="linea">Tema 1: [Nombre del Tema 1]</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- ===================== NAV PRINCIPAL ===================== -->
+    <nav class="main-nav">
+      <ul>
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="#" id="btnMostrarIndice">Índice</a></li>
+        <li><a href="../referencias.html">Referencias</a></li>
+      </ul>
+    </nav>
+
+    <!-- ===================== BARRA LATERAL (ÍNDICE) ===================== -->
+    <div class="main-container">
+      <aside class="sidebar collapsed">
+        <!-- Botón para mostrar/ocultar la barra lateral -->
+        <button class="toggle-btn">☰ Índice</button>
+        <ul class="indice-list">
+          <!-- Coloca aquí los enlaces a tus páginas: inicio, cada tema/subtema y referencia -->
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="5.1.html">5.1 Principios del Hardware de E/S</a></li>
+          <li><a href="5.1.1.html">5.1.1 Dispositivos de E/S</a></li>
+          <li><a href="5.1.2.html">5.1.2 Controladores de Dispositivos</a></li>
+          <li><a href="5.1.3.html">5.1.3 Interrupciones</a></li>
+          <li><a href="5.1.4.html">5.1.4 Acceso de Memoria Directo (DMA)</a></li>
+          <li><a href="5.2.html">5.2 Principios del Software de E/S</a></li>
+          <li><a href="5.2.1.html">5.2.1 Objetivos del Software de E/S</a></li>
+          <li><a href="5.2.2.html">5.2.2 E/S programadas</a></li>
+          <li><a href="5.2.3.html">5.2.3 E/S Manejadas por Interrupciones</a></li>
+          <li><a href="5.2.4.html">5.2.4 E/S Usando DMA</a></li>
+          <li><a href="5.3.html">5.3 Capas de Software</a></li>
+          <li><a href="5.3.1.html">5.3.1 Manejador de Interrupciones</a></li>
+          <li><a href="5.3.2.html">5.3.2 Controladores de los Dispositivos</a></li>
+          <li><a href="5.3.3.html">5.3.3 Software modo usuario para E/S</a></li>
+          <!-- … más temas … -->
+          <li><a href="../referencias.html">Referencias</a></li>
+        </ul>
+      </aside>
+
+
+      <!-- ===================== ÁREA DE CONTENIDO ===================== -->
+      <main class="content-area">
+        <h1 class="page-title">Tema 1: [Nombre del Tema]</h1>
+
+        <!-- ================ CONTENIDO DEL TEMA ================ -->
+        <!-- Aquí pegas tu investigación: texto, imágenes, videos, tablas, etc. -->
+        <!-- ================== EJEMPLOS de elementos ================== -->
+
+        <!-- == PÁRRAFOS DE TEXTO == -->
+        <p>
+          En este tema veremos los aspectos fundamentales de …
+        </p>
+        <p>
+          <!-- Más texto… -->
+        </p>
+
+        <!-- == IMAGEN ILUSTRATIVA == -->
+        <div style="margin: 20px 0; text-align: center;">
+          <!-- Pon aquí la imagen con tu ruta, por ejemplo:
+               <img src="../assets/tema1/diagrama.png" alt="Diagrama Tema 1" style="max-width:100%; border-radius:6px;">
+          -->
+          <img src="../assets/tema1/imagen_ejemplo.jpg" alt="Imagen Tema 1" style="max-width:100%; border-radius:6px;" />
+        </div>
+
+        <!-- == VIDEO EMBEBIDO == -->
+        <!-- Por ejemplo, si tienes un video en YouTube, usa esto: -->
+        <div style="margin: 20px 0; text-align: center;">
+          <iframe width="560" height="315"
+            src="https://www.youtube.com/embed/CÓDIGO_VIDEO"
+            title="Video Tema 1"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <!-- == TABLA EJEMPLO == -->
+        <h2 class="subtitulo">Tabla 1.1 – Descripción de las Extensiones</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Extensión</th>
+              <th>Descripción</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>.c</td>
+              <td>Archivo fuente en C</td>
+            </tr>
+            <tr>
+              <td>.txt</td>
+              <td>Archivo de texto plano</td>
+            </tr>
+            <!-- Agrega más filas según lo necesites -->
+          </tbody>
+        </table>
+
+        <!-- == ACORDEÓN: BOTÓN PARA MOSTRAR DETALLES ADICIONALES == -->
+        <button class="accordion">Ver más detalles sobre X</button>
+        <div class="panel">
+          <p>
+            <!-- Aquí dentro colocas el texto que mostrará/ocultará al hacer clic en “Ver más detalles sobre X” -->
+            Estos son detalles adicionales sobre el tema…
+          </p>
+        </div>
+
+        <!-- ============== FIN DEL CONTENIDO DEL TEMA ============== -->
+
+        <!-- ============== BARRA DE NAVEGACIÓN ENTRE SUBTEMAS ============== -->
+        <div style="margin-top: 30px; border-top: 1px solid #ccc; padding-top: 15px;">
+          <button class="accordion">Subtema 1.1: Nombre</button>
+          <div class="panel">
+            <p>
+              <!-- Breve descripción o enlace →-->
+              <a href="subtema1_1.html">Ir a Subtema 1.1</a>
+            </p>
+          </div>
+
+          <button class="accordion">Subtema 1.2: Nombre</button>
+          <div class="panel">
+            <p>
+              <a href="subtema1_2.html">Ir a Subtema 1.2</a>
+            </p>
+          </div>
+
+          <!-- Agrega tantos subtemas (botón + panel) como necesites -->
+
+          <!-- Enlace a la actividad de este tema -->
+          <button class="accordion">Actividad del Tema 1</button>
+          <div class="panel">
+            <p>
+              <a href="../actividad.html">Ir a Actividad</a>
+            </p>
+          </div>
+
+          <!-- Navegación “Anterior / Siguiente Tema” -->
+          <div style="margin-top: 20px; display: flex; justify-content: space-between;">
+            <!-- Si existe tema anterior, habilita el enlace; si no, déjalo deshabilitado o quítalo -->
+            <a href="5.2.3.html">
+              <button>&laquo; Tema Anterior</button>
+            </a>
+            <!-- Si existe tema siguiente -->
+            <a href="5.3.html">
+              <button>Próximo Tema &raquo;</button>
+            </a>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="site-footer">
+      <div class="footer-text">
+        Unidad V – (Tema 1) • Hecho por: [TU NOMBRE] • Fecha: [DD/MM/AAAA]
+      </div>
+    </footer>
+  </div>
+
+  <!-- ==== INCLUIMOS EL SCRIPT GENERAL ==== -->
+  <script src="../../js/scripts.js"></script>
+</body>
+</html>
