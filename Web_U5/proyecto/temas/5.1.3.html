@@ -9,24 +9,36 @@
 <body>
   <div class="wrapper">
     <!-- ===================== HEADER ===================== -->
-    <header class="site-header">
-      <div class="header-inner">
-        <div class="logos">
-          <!-- Logo ESCOM -->
-          <img src="../../assets/logo1.png" alt="Logo ESCOM" />
-          <!-- Logo IPN u otro -->
-          <img src="../../assets/logo2.png" alt="Logo IPN" />
-        </div>
-        <div class="datos-escuela">
-          <span class="linea">Instituto Politécnico Nacional</span>
-          <span class="linea">Escuela Superior de Cómputo (ESCOM)</span>
-          <span class="linea">Ingeniería en Sistemas Computacionales</span>
-          <span class="linea">Materia: Sistemas Operativos</span>
-          <span class="linea">Unidad V: Dispositivos de Entrada y Salida</span>
-          <span class="linea">Tema 1: [Nombre del Tema 1]</span>
-        </div>
-      </div>
-    </header>
+<header class="site-header">
+  <div class="header-inner">
+    <!-- --------------------------------------------
+         LOGO IZQUIERDO (clase .logo-left)
+         -------------------------------------------- -->
+    <div class="logo-left">
+      <!-- Cambia src="assets/logo-escom.png" por tu ruta real -->
+      <img src="../../assets/logo1.png" alt="Logo ESCOM" />
+    </div>
+
+    <!-- --------------------------------------------
+         TEXTO CENTRADO (clase .header-text)
+         -------------------------------------------- -->
+    <div class="header-text">
+      <p>Instituto Politécnico Nacional</p>
+      <p>Escuela Superior de Cómputo</p>
+      <p>Ingeniería en Sistemas Computacionales</p>
+      <p>Sistemas Operativos</p>
+      <p>Unidad V: Dispositivos de Entrada y Salida</p>
+    </div>
+
+    <!-- --------------------------------------------
+         LOGO DERECHO (clase .logo-right)
+         -------------------------------------------- -->
+    <div class="logo-right">
+      <!-- Cambia src="assets/logo-ipn.png" por tu ruta real -->
+      <img src="../../assets/logo2.png" alt="Logo IPN" />
+    </div>
+  </div>
+</header>
 
     <!-- ===================== NAV PRINCIPAL ===================== -->
     <nav class="main-nav">
@@ -164,11 +176,11 @@
           <!-- Navegación “Anterior / Siguiente Tema” -->
           <div style="margin-top: 20px; display: flex; justify-content: space-between;">
             <!-- Si existe tema anterior, habilita el enlace; si no, déjalo deshabilitado o quítalo -->
-            <a href="5.1.2.html">
+            <a href="5.1.html">
               <button>&laquo; Tema Anterior</button>
             </a>
             <!-- Si existe tema siguiente -->
-            <a href="5.1.4.html">
+            <a href="5.1.2.html">
               <button>Próximo Tema &raquo;</button>
             </a>
           </div>
