@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tema 1 — Nombre del tema</title>
+  <title>5.3.3 Software en modo usuario para E/S</title>
   <link rel="stylesheet" href="../../css/style.css" />
 </head>
 <body>
@@ -55,7 +55,7 @@
         <!-- Botón para mostrar/ocultar la barra lateral -->
         <button class="toggle-btn">☰ Índice</button>
         <ul class="indice-list">
-          <!-- Coloca aquí los enlaces a tus páginas: inicio, cada tema/subtema y referencia -->
+
           <li><a href="../index.html">Inicio</a></li>
           <li><a href="5.1.html">5.1 Principios del Hardware de E/S</a></li>
           <li><a href="5.1.1.html">5.1.1 Dispositivos de E/S</a></li>
@@ -71,7 +71,7 @@
           <li><a href="5.3.1.html">5.3.1 Manejador de Interrupciones</a></li>
           <li><a href="5.3.2.html">5.3.2 Controladores de los Dispositivos</a></li>
           <li><a href="5.3.3.html">5.3.3 Software modo usuario para E/S</a></li>
-          <!-- … más temas … -->
+
           <li><a href="../referencias.html">Referencias</a></li>
         </ul>
       </aside>
@@ -79,90 +79,47 @@
 
       <!-- ===================== ÁREA DE CONTENIDO ===================== -->
       <main class="content-area">
-        <h1 class="page-title">5.3.3 [Nombre del Tema]</h1>
+        <h1 class="page-title">5.3.3 Software en modo usuario para E/S</h1>
 
         <!-- ================ CONTENIDO DEL TEMA ================ -->
-        <!-- Aquí pegas tu investigación: texto, imágenes, videos, tablas, etc. -->
-        <!-- ================== EJEMPLOS de elementos ================== -->
+<p>Aunque la mayoría del software de entrada/salida se encuentra dentro del sistema operativo, también hay una parte importante que se ejecuta en el espacio de usuario, fuera del núcleo. Esta parte incluye tanto procedimientos de biblioteca como programas que se ejecutan como procesos de usuario independientes.</p>
 
-        <!-- == PÁRRAFOS DE TEXTO == -->
-        <p>
-          En este tema veremos los aspectos fundamentales de …
+  <h2 class="subtitulo">Procedimientos de biblioteca</h2>
+  <p>Las llamadas al sistema, incluidas las de E/S, se realizan comúnmente mediante funciones de biblioteca. Por ejemplo, en un programa en lenguaje C, la instrucción:</p>
+  <p>cuenta = write(da, buffer, nbytes);</p>
+  <p>es una función de biblioteca que se vincula con el programa en tiempo de compilación y permanece en memoria durante su ejecución. Esta colección de funciones es parte del subsistema de E/S.</p>
+  <p>Algunas funciones hacen más que simplemente invocar al sistema operativo. Por ejemplo, printf da formato a la salida antes de escribirla. Una instrucción como:</p>
+  <p>printf("El cuadrado de %3d es %6d\n", i, i*i);</p>
+  <p>convierte variables en una cadena con formato antes de pasarla a una función como write.</p>
+  <p>De forma similar, scanf lee datos de entrada y los almacena en variables según un formato. Todas estas funciones son parte de la biblioteca estándar de E/S y se ejecutan en modo usuario.</p>
+
+  <h2 class="subtitulo">Sistemas de colas (spooling)</h2>
+  <p>No todo el software de E/S en espacio de usuario corresponde a funciones de biblioteca. También existen programas especializados, como demonios de E/S, que gestionan dispositivos compartidos usando un sistema de colas o spooling.</p>
+  <p>Un ejemplo típico es el uso de impresoras. Permitir que cualquier proceso acceda directamente a la impresora puede generar conflictos o bloqueos. Para evitarlo, se utiliza un mecanismo donde:</p>
+  <p>El usuario crea un archivo que desea imprimir. Este archivo se coloca en un directorio especial de cola de impresión. Un demonio de impresión, que es el único con acceso directo a la impresora, imprime los archivos en el orden en que fueron colocados.</p>
+  <p>Este sistema protege al dispositivo y asegura un uso controlado y organizado.</p>
+
+  <h2 class="subtitulo">Spooling en redes y otros dispositivos</h2>
+  <p>El modelo de colas también se aplica en otros contextos, como en redes. Para enviar archivos, estos se colocan en una cola y un proceso dedicado se encarga de transmitirlos. Un ejemplo conocido de este concepto fue USENET, una red de distribución de noticias donde los mensajes eran almacenados temporalmente antes de ser distribuidos a otras máquinas. Todo este proceso era gestionado por software en espacio de usuario.</p>
+
+  <h2 class="subtitulo">Resumen del sistema de E/S</h2>
+  <p>El modelo de entrada/salida puede entenderse como una jerarquía de niveles que interactúan entre sí. Estos niveles son:</p>
+  <ol>
+    <li>Hardware</li>
+    <li>Manejadores de interrupciones</li>
+    <li>Controladores de dispositivos</li>
+    <li>Software independiente del dispositivo</li>
+    <li>Procesos de usuario</li>
+  </ol>
+  <p>El control fluye entre estos niveles. Cuando un usuario solicita leer un archivo, el sistema operativo maneja la llamada, el software independiente del dispositivo verifica si el bloque solicitado está en caché, y si no lo está, se solicita al controlador leerlo desde el disco. El proceso queda bloqueado hasta que la operación finalice.</p>
+  <p>Cuando el dispositivo termina su tarea, genera una interrupción. El manejador de interrupciones identifica el origen, obtiene el estado del dispositivo y despierta al proceso bloqueado para continuar con su ejecución.</p>
+  <p>Este modelo permite entender cómo interactúan el software en modo usuario y el núcleo del sistema operativo en las operaciones de entrada y salida.</p>
+
+        <div style="margin: 20px 0; text-align: left;">
+        <p style="font-size: 12px; color: #666; margin-top: 5px;">
+ Tanenbaum, A. S., & Van Steen, M. (2009). Sistemas operativos modernos: 5.3.3 Software de E/S independiente del dispositivo. (3.ª ed., A. V. R. Elizondo, Trad.; J. R. R. Sánchez & A. J. Govea, Revisión técnica). Pearson Educación. pp. 353-358
         </p>
-        <p>
-          <!-- Más texto… -->
-        </p>
-
-        <!-- == IMAGEN ILUSTRATIVA == -->
-        <div style="margin: 20px 0; text-align: center;">
-          <!-- Pon aquí la imagen con tu ruta, por ejemplo:
-               <img src="../assets/tema1/diagrama.png" alt="Diagrama Tema 1" style="max-width:100%; border-radius:6px;">
-          -->
-          <img src="../assets/tema1/imagen_ejemplo.jpg" alt="Imagen Tema 1" style="max-width:100%; border-radius:6px;" />
         </div>
-
-        <!-- == VIDEO EMBEBIDO == -->
-        <!-- Por ejemplo, si tienes un video en YouTube, usa esto: -->
-        <div style="margin: 20px 0; text-align: center;">
-          <iframe width="560" height="315"
-            src="https://www.youtube.com/embed/CÓDIGO_VIDEO"
-            title="Video Tema 1"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-          </iframe>
-        </div>
-
-        <!-- == TABLA EJEMPLO == -->
-        <h2 class="subtitulo">Tabla 1.1 – Descripción de las Extensiones</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>Extensión</th>
-              <th>Descripción</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>.c</td>
-              <td>Archivo fuente en C</td>
-            </tr>
-            <tr>
-              <td>.txt</td>
-              <td>Archivo de texto plano</td>
-            </tr>
-            <!-- Agrega más filas según lo necesites -->
-          </tbody>
-        </table>
-
-        <!-- == ACORDEÓN: BOTÓN PARA MOSTRAR DETALLES ADICIONALES == -->
-        <button class="accordion">Ver más detalles sobre X</button>
-        <div class="panel">
-          <p>
-            <!-- Aquí dentro colocas el texto que mostrará/ocultará al hacer clic en “Ver más detalles sobre X” -->
-            Estos son detalles adicionales sobre el tema…
-          </p>
-        </div>
-
-        <!-- ============== FIN DEL CONTENIDO DEL TEMA ============== -->
-
-        <!-- ============== BARRA DE NAVEGACIÓN ENTRE SUBTEMAS ============== -->
-        <div style="margin-top: 30px; border-top: 1px solid #ccc; padding-top: 15px;">
-          <button class="accordion">Subtema 1.1: Nombre</button>
-          <div class="panel">
-            <p>
-              <!-- Breve descripción o enlace →-->
-              <a href="subtema1_1.html">Ir a Subtema 1.1</a>
-            </p>
-          </div>
-
-          <button class="accordion">Subtema 1.2: Nombre</button>
-          <div class="panel">
-            <p>
-              <a href="subtema1_2.html">Ir a Subtema 1.2</a>
-            </p>
-          </div>
-
           <div style="display: flex; justify-content: center; margin-top: 15px;">
           <a href="../actividades/actividad.5.3.html">
             <button>Actividad del tema 5.3</button>
