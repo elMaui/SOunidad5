@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Actividad Tema 5.3 Capas de Software</title>
+  <link rel="stylesheet" href="../../css/style.css" />
+</head>
+<body>
+  <div class="wrapper">
+    <!-- ===================== HEADER ===================== -->
+<header class="site-header">
+  <div class="header-inner">
+    <!-- --------------------------------------------
+         LOGO IZQUIERDO (clase .logo-left)
+         -------------------------------------------- -->
+    <div class="logo-left">
+      <!-- Cambia src="assets/logo-escom.png" por tu ruta real -->
+      <img src="../../assets/logo1.png" alt="Logo ESCOM" />
+    </div>
+
+    <!-- --------------------------------------------
+         TEXTO CENTRADO (clase .header-text)
+         -------------------------------------------- -->
+    <div class="header-text">
+      <p>Instituto Politécnico Nacional</p>
+      <p>Escuela Superior de Cómputo</p>
+      <p>Ingeniería en Sistemas Computacionales</p>
+      <p>Sistemas Operativos</p>
+      <p>Unidad V: Dispositivos de Entrada y Salida</p>
+    </div>
+
+    <!-- --------------------------------------------
+         LOGO DERECHO (clase .logo-right)
+         -------------------------------------------- -->
+    <div class="logo-right">
+      <!-- Cambia src="assets/logo-ipn.png" por tu ruta real -->
+      <img src="../../assets/logo2.png" alt="Logo IPN" />
+    </div>
+  </div>
+</header>
+
+    <!-- ===================== NAV PRINCIPAL ===================== -->
+    <nav class="main-nav">
+      <ul>
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="#" id="btnMostrarIndice">Índice</a></li>
+        <li><a href="../referencias.html">Referencias</a></li>
+      </ul>
+    </nav>
+
+    <!-- ===================== BARRA LATERAL (ÍNDICE) ===================== -->
+    <div class="main-container">
+      <aside class="sidebar collapsed">
+        <!-- Botón para mostrar/ocultar la barra lateral -->
+        <button class="toggle-btn">☰ Índice</button>
+        <ul class="indice-list">
+          <!-- Coloca aquí los enlaces a tus páginas: inicio, cada tema/subtema y referencia -->
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="../temas/5.1.html">5.1 Principios del Hardware de E/S</a></li>
+          <li><a href="../temas/5.1.1.html">5.1.1 Dispositivos de E/S</a></li>
+          <li><a href="../temas/5.1.2.html">5.1.2 Controladores de Dispositivos</a></li>
+          <li><a href="../temas/5.1.3.html">5.1.3 Interrupciones</a></li>
+          <li><a href="../temas/5.1.4.html">5.1.4 Acceso de Memoria Directo (DMA)</a></li>
+          <li><a href="../temas/5.2.html">5.2 Principios del Software de E/S</a></li>
+          <li><a href="../temas/5.2.1.html">5.2.1 Objetivos del Software de E/S</a></li>
+          <li><a href="../temas/5.2.2.html">5.2.2 E/S programadas</a></li>
+          <li><a href="../temas/5.2.3.html">5.2.3 E/S Manejadas por Interrupciones</a></li>
+          <li><a href="../temas/5.2.4.html">5.2.4 E/S Usando DMA</a></li>
+          <li><a href="../temas/5.3.html">5.3 Capas de Software</a></li>
+          <li><a href="../temas/5.3.1.html">5.3.1 Manejador de Interrupciones</a></li>
+          <li><a href="../temas/5.3.2.html">5.3.2 Controladores de los Dispositivos</a></li>
+          <li><a href="../temas/5.3.3.html">5.3.3 Software modo usuario para E/S</a></li>
+          <!-- … más temas … -->
+          <li><a href="../referencias.html">Referencias</a></li>
+        </ul>
+      </aside>
+
+
+      <!-- ===================== ÁREA DE CONTENIDO ===================== -->
+      <main class="content-area">
+        <h1 class="page-title">Actividad del Tema 5.3 Capas de Software</h1>
+
+        <!-- ======== TEMPORIZADOR ======== -->
+        <div style="margin-bottom: 20px;">
+          <strong>Tiempo restante:</strong> <span id="reloj">05:00</span>
+        </div>
+
+<!-- ======== CUESTIONARIO: Principios del software de E/S ======== -->
+<!-- ======== CUESTIONARIO: Capas del Software de E/S ======== -->
+<form id="form-actividad">
+
+  <!-- Pregunta 1 -->
+  <div style="margin-bottom: 15px;">
+    <p>1. ¿Cuál es la principal función del manejador de interrupciones?</p>
+    <label>
+      <input type="radio" name="pregunta1" class="respuesta" data-correcto="verdadero" value="a" />
+      Gestionar la respuesta del sistema ante eventos generados por dispositivos.
+    </label><br />
+    <label>
+      <input type="radio" name="pregunta1" class="respuesta" data-correcto="falso" value="b" />
+      Ejecutar directamente los programas del usuario.
+    </label><br />
+    <label>
+      <input type="radio" name="pregunta1" class="respuesta" data-correcto="falso" value="c" />
+      Asignar direcciones IP a dispositivos.
+    </label><br />
+  </div>
+
+  <!-- Pregunta 2 -->
+  <div style="margin-bottom: 15px;">
+    <p>2. ¿Qué pasos forman parte del procesamiento de una interrupción?</p>
+    <label>
+      <input type="checkbox" name="pregunta2" class="respuesta" data-correcto="verdadero" value="a" />
+      Guardar los registros y establecer el contexto.
+    </label><br />
+    <label>
+      <input type="checkbox" name="pregunta2" class="respuesta" data-correcto="verdadero" value="b" />
+      Ejecutar el procedimiento de servicio del dispositivo.
+    </label><br />
+    <label>
+      <input type="checkbox" name="pregunta2" class="respuesta" data-correcto="falso" value="c" />
+      Formatear automáticamente el dispositivo involucrado.
+    </label><br />
+  </div>
+
+  <!-- Pregunta 3 -->
+  <div style="margin-bottom: 15px;">
+    <p>3. ¿Qué es un controlador de dispositivo (driver)?</p>
+    <label>
+      <input type="radio" name="pregunta3" class="respuesta" data-correcto="verdadero" value="a" />
+      Un programa que traduce operaciones abstractas en comandos específicos del hardware.
+    </label><br />
+    <label>
+      <input type="radio" name="pregunta3" class="respuesta" data-correcto="falso" value="b" />
+      Un chip físico integrado en la placa madre.
+    </label><br />
+    <label>
+      <input type="radio" name="pregunta3" class="respuesta" data-correcto="falso" value="c" />
+      Un servicio de red que envía señales de E/S.
+    </label><br />
+  </div>
+
+  <!-- Pregunta 4 -->
+  <div style="margin-bottom: 15px;">
+    <p>4. ¿Qué funciones cumple un driver de dispositivo?</p>
+    <label>
+      <input type="checkbox" name="pregunta4" class="respuesta" data-correcto="verdadero" value="a" />
+      Inicializar el dispositivo y manejar errores.
+    </label><br />
+    <label>
+      <input type="checkbox" name="pregunta4" class="respuesta" data-correcto="verdadero" value="b" />
+      Traducir parámetros abstractos a físicos.
+    </label><br />
+    <label>
+      <input type="checkbox" name="pregunta4" class="respuesta" data-correcto="falso" value="c" />
+      Ejecutar directamente aplicaciones de usuario.
+    </label><br />
+  </div>
+
+  <!-- Pregunta 5 -->
+  <div style="margin-bottom: 15px;">
+    <p>5. ¿Cuál es una ventaja de ejecutar drivers en espacio de usuario, como en MINIX 3?</p>
+    <label>
+      <input type="radio" name="pregunta5" class="respuesta" data-correcto="verdadero" value="a" />
+      Aislar fallos de hardware sin afectar el núcleo del sistema.
+    </label><br />
+    <label>
+      <input type="radio" name="pregunta5" class="respuesta" data-correcto="falso" value="b" />
+      Permitir a los usuarios escribir sus propios drivers sin restricciones.
+    </label><br />
+    <label>
+      <input type="radio" name="pregunta5" class="respuesta" data-correcto="falso" value="c" />
+      Ejecutar los drivers con mayor prioridad que el kernel.
+    </label><br />
+  </div>
+
+  <!-- Pregunta 6 -->
+  <div style="margin-bottom: 15px;">
+    <p>6. ¿Qué características forman parte del software de E/S en modo usuario?</p>
+    <label>
+      <input type="checkbox" name="pregunta6" class="respuesta" data-correcto="verdadero" value="a" />
+      Funciones de biblioteca como write o printf.
+    </label><br />
+    <label>
+      <input type="checkbox" name="pregunta6" class="respuesta" data-correcto="falso" value="b" />
+      Acceso directo al hardware sin pasar por el kernel.
+    </label><br />
+    <label>
+      <input type="checkbox" name="pregunta6" class="respuesta" data-correcto="verdadero" value="c" />
+      Uso de demonios como el spooler de impresión.
+    </label><br />
+  </div>
+
+  <!-- Pregunta 7 -->
+  <div style="margin-bottom: 15px;">
+    <p>7. ¿Qué propósito tiene el sistema de colas (spooling)?</p>
+    <label>
+      <input type="radio" name="pregunta7" class="respuesta" data-correcto="verdadero" value="a" />
+      Coordinar el acceso ordenado a dispositivos compartidos como impresoras.
+    </label><br />
+    <label>
+      <input type="radio" name="pregunta7" class="respuesta" data-correcto="falso" value="b" />
+      Permitir acceso simultáneo de múltiples procesos a un dispositivo.
+    </label><br />
+    <label>
+      <input type="radio" name="pregunta7" class="respuesta" data-correcto="falso" value="c" />
+      Evitar el uso de controladores de dispositivo.
+    </label><br />
+  </div>
+
+  <!-- Pregunta 8 -->
+  <div style="margin-bottom: 15px;">
+    <p>8. ¿Qué problemas debe manejar un driver reentrante?</p>
+    <label>
+      <input type="checkbox" name="pregunta8" class="respuesta" data-correcto="verdadero" value="a" />
+      Ser invocado mientras ya se encuentra ejecutándose.
+    </label><br />
+    <label>
+      <input type="checkbox" name="pregunta8" class="respuesta" data-correcto="falso" value="b" />
+      Evitar la escritura en memoria de solo lectura.
+    </label><br />
+    <label>
+      <input type="checkbox" name="pregunta8" class="respuesta" data-correcto="verdadero" value="c" />
+      Ejecutarse de forma segura bajo interrupciones simultáneas.
+    </label><br />
+  </div>
+
+  <!-- Pregunta 9 -->
+  <div style="margin-bottom: 15px;">
+    <p>9. ¿Qué tipo de dispositivos usan drivers de carácter?</p>
+    <label>
+      <input type="radio" name="pregunta9" class="respuesta" data-correcto="verdadero" value="a" />
+      Dispositivos que manejan flujos secuenciales, como teclados o impresoras.
+    </label><br />
+    <label>
+      <input type="radio" name="pregunta9" class="respuesta" data-correcto="falso" value="b" />
+      Discos duros con acceso por bloques.
+    </label><br />
+    <label>
+      <input type="radio" name="pregunta9" class="respuesta" data-correcto="falso" value="c" />
+      Memorias RAM virtuales.
+    </label><br />
+  </div>
+
+  <!-- Pregunta 10 -->
+  <div style="margin-bottom: 15px;">
+    <p>10. ¿Qué características presenta la arquitectura moderna de carga de drivers?</p>
+    <label>
+      <input type="checkbox" name="pregunta10" class="respuesta" data-correcto="verdadero" value="a" />
+      Los controladores pueden cargarse dinámicamente en tiempo de ejecución.
+    </label><br />
+    <label>
+      <input type="checkbox" name="pregunta10" class="respuesta" data-correcto="verdadero" value="b" />
+      Permiten el soporte flexible de nuevos dispositivos sin recompilar el kernel.
+    </label><br />
+    <label>
+      <input type="checkbox" name="pregunta10" class="respuesta" data-correcto="falso" value="c" />
+      Requieren que el sistema esté apagado para añadir drivers.
+    </label><br />
+  </div>
+
+</form>
+
+
+
+
+          <!-- Botón para validar respuestas -->
+          <input type="button" value="Validar respuestas" id="btnValidar" />
+
+          <!-- Caja donde se mostrará el resultado -->
+          <div class="resultado-actividad" style="margin-top: 10px; font-weight: bold;"></div>
+        </form>
+
+        <!-- ======== BOTÓN REINICIAR ======== -->
+        <button id="btnReiniciar">Reiniciar Actividad</button>
+      </main>
+    </div>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="site-footer">
+      <div class="footer-text">
+        Unidad V - Dispositivos de Entrada y Salida • Hecho por: Núñez Anrubio Jonathan M. & Peña Razo Christian Y. • Fecha de elaboración: [06/Jun/2025]
+      </div>
+    </footer>
+  </div>
+
+  <script src="../../js/scripts.js"></script>
+  <script>
+    // Cuando el documento esté listo, iniciamos el temporizador:
+    document.addEventListener("DOMContentLoaded", function () {
+      const reloj = document.getElementById("reloj");
+      // Ajusta 300 segundos (5 minutos) al gusto:
+      iniciarTemporizador(300, reloj, function () {
+        alert("¡Se terminó el tiempo!");
+        // Opcional: deshabilitar el botón “Validar” al acabarse el tiempo
+        document.getElementById("btnValidar").disabled = true;
+      });
+
+      // Evento para validar respuestas
+      document.getElementById("btnValidar").addEventListener("click", function () {
+        const { correctas, totales } = validarRespuestas();
+        const resultadoBox = document.querySelector(".resultado-actividad");
+        resultadoBox.textContent = `Obtuviste ${correctas} de ${totales} correctas.`;
+        // Puedes añadir lógica de puntajes extra aquí
+      });
+
+      // Evento para reiniciar la actividad
+      document.getElementById("btnReiniciar").addEventListener("click", function () {
+        reiniciarActividad("#form-actividad");
+        // Reiniciar temporizador (opcional):
+        clearInterval(); // si deseas parar el anterior
+        iniciarTemporizador(300, reloj, function () {
+          alert("¡Se terminó el tiempo!");
+          document.getElementById("btnValidar").disabled = true;
+        });
+      });
+    });
+  </script>
+</body>
+</html>
