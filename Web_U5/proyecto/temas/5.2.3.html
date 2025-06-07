@@ -80,7 +80,7 @@
       <!-- ===================== ÁREA DE CONTENIDO ===================== -->
       <main class="content-area">
         <h1 class="page-title">5.2.3 E/S manejadas por interrupciones</h1>
-
+ 
         <!-- ================ CONTENIDO DEL TEMA ================ -->
         <p>
        Otra manera en la que se puede realizar la E/S desde el punto de vista del sistema operativo es la E/S manejada por interrupciones, la cual mejora la eficiencia del sistema al permitir que la CPU no espere activamente a que un dispositivo esté listo, como en la E/S programada. En lugar de eso, el dispositivo interrumpe a la CPU solo cuando necesita atención, por ejemplo, al imprimir una cadena, el sistema operativo copia los datos del proceso al espacio de kernel y envía el primer carácter a la impresora. Luego, la CPU puede ejecutar otro proceso mientras la impresora trabaja. Cuando la impresora termina de imprimir un carácter, genera una interrupción.
