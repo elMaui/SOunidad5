@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tema 1 — Nombre del tema</title>
+  <title>5.2.3 E/S manejadas por interrupciones</title>
   <link rel="stylesheet" href="../../css/style.css" />
 </head>
 <body>
@@ -79,107 +79,35 @@
 
       <!-- ===================== ÁREA DE CONTENIDO ===================== -->
       <main class="content-area">
-        <h1 class="page-title">5.2.3 [Nombre del Tema]</h1>
+        <h1 class="page-title">5.2.3 E/S manejadas por interrupciones</h1>
 
         <!-- ================ CONTENIDO DEL TEMA ================ -->
-        <!-- Aquí pegas tu investigación: texto, imágenes, videos, tablas, etc. -->
-        <!-- ================== EJEMPLOS de elementos ================== -->
-
-        <!-- == PÁRRAFOS DE TEXTO == -->
         <p>
-          En este tema veremos los aspectos fundamentales de …
-        </p>
-        <p>
-          <!-- Más texto… -->
+       Otra manera en la que se puede realizar la E/S desde el punto de vista del sistema operativo es la E/S manejada por interrupciones, la cual mejora la eficiencia del sistema al permitir que la CPU no espere activamente a que un dispositivo esté listo, como en la E/S programada. En lugar de eso, el dispositivo interrumpe a la CPU solo cuando necesita atención, por ejemplo, al imprimir una cadena, el sistema operativo copia los datos del proceso al espacio de kernel y envía el primer carácter a la impresora. Luego, la CPU puede ejecutar otro proceso mientras la impresora trabaja. Cuando la impresora termina de imprimir un carácter, genera una interrupción.
         </p>
 
-        <!-- == IMAGEN ILUSTRATIVA == -->
-        <div style="margin: 20px 0; text-align: center;">
-          <!-- Pon aquí la imagen con tu ruta, por ejemplo:
-               <img src="../assets/tema1/diagrama.png" alt="Diagrama Tema 1" style="max-width:100%; border-radius:6px;">
-          -->
-          <img src="../assets/tema1/imagen_ejemplo.jpg" alt="Imagen Tema 1" style="max-width:100%; border-radius:6px;" />
-        </div>
-
-        <!-- == VIDEO EMBEBIDO == -->
-        <!-- Por ejemplo, si tienes un video en YouTube, usa esto: -->
-        <div style="margin: 20px 0; text-align: center;">
-          <iframe width="560" height="315"
-            src="https://www.youtube.com/embed/CÓDIGO_VIDEO"
-            title="Video Tema 1"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-          </iframe>
-        </div>
-
-        <!-- == TABLA EJEMPLO == -->
-        <h2 class="subtitulo">Tabla 1.1 – Descripción de las Extensiones</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>Extensión</th>
-              <th>Descripción</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>.c</td>
-              <td>Archivo fuente en C</td>
-            </tr>
-            <tr>
-              <td>.txt</td>
-              <td>Archivo de texto plano</td>
-            </tr>
-            <!-- Agrega más filas según lo necesites -->
-          </tbody>
-        </table>
-
-        <!-- == ACORDEÓN: BOTÓN PARA MOSTRAR DETALLES ADICIONALES == -->
-        <button class="accordion">Ver más detalles sobre X</button>
-        <div class="panel">
-          <p>
-            <!-- Aquí dentro colocas el texto que mostrará/ocultará al hacer clic en “Ver más detalles sobre X” -->
-            Estos son detalles adicionales sobre el tema…
+        <div style="margin: 20x 0; text-align: center;">
+          <img src="../../assets/5.2.3_interrupciones.png" alt="Imagen Tema 1" style="max-width:40%; border-radius:6px;" />
+        
+          <p style="font-size: 12px; color: #666; margin-top: 5px;">
+            Fuente: <a href="https://expo3.blogia.com/2007/012802-e-s-por-interrupciones.php" target="_blank" style="color: #666; text-decoration: none;"> E/S POR INTERRUPCIONES. (2007, Enero 28). Exposición 3 de Arquitectura - Blogia Recuperado: Junio 6, 2025, de https://expo3.blogia.com/2007/012802-e-s-por-interrupciones.php</a>
           </p>
         </div>
 
-        <!-- ============== FIN DEL CONTENIDO DEL TEMA ============== -->
-
-        <!-- ============== BARRA DE NAVEGACIÓN ENTRE SUBTEMAS ============== -->
-        <div style="margin-top: 30px; border-top: 1px solid #ccc; padding-top: 15px;">
-          <button class="accordion">Subtema 1.1: Nombre</button>
-          <div class="panel">
-            <p>
-              <!-- Breve descripción o enlace →-->
-              <a href="subtema1_1.html">Ir a Subtema 1.1</a>
-            </p>
-          </div>
-
-          <button class="accordion">Subtema 1.2: Nombre</button>
-          <div class="panel">
-            <p>
-              <a href="subtema1_2.html">Ir a Subtema 1.2</a>
-            </p>
-          </div>
-
-          <!-- Agrega tantos subtemas (botón + panel) como necesites -->
-
-          <!-- Enlace a la actividad de este tema -->
-          <button class="accordion">Actividad del Tema 1</button>
-          <div class="panel">
-            <p>
-              <a href="../actividad.html">Ir a Actividad</a>
-            </p>
-          </div>
-
+        <p>
+  La interrupción detiene temporalmente el proceso en ejecución, se ejecuta una rutina especial que envía el siguiente carácter (si queda alguno), y luego se reanuda el proceso interrumpido. Si no hay más caracteres, se desbloquea el proceso que pidió la impresión.
+        </p>
+<br>
+        <p>
+  Este método libera a la CPU de estar ocupada en espera, lo que mejora el rendimiento del sistema, especialmente en entornos multitarea.
+        </p>
           <!-- Navegación “Anterior / Siguiente Tema” -->
           <div style="margin-top: 20px; display: flex; justify-content: space-between;">
-            <!-- Si existe tema anterior, habilita el enlace; si no, déjalo deshabilitado o quítalo -->
+
             <a href="5.2.2.html">
               <button>&laquo; Tema Anterior</button>
             </a>
-            <!-- Si existe tema siguiente -->
+
             <a href="5.2.4.html">
               <button>Próximo Tema &raquo;</button>
             </a>

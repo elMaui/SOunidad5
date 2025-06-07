@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tema 1 — Nombre del tema</title>
+  <title>5.2.4 E/S usando DMA</title>
   <link rel="stylesheet" href="../../css/style.css" />
 </head>
 <body>
@@ -55,7 +55,7 @@
         <!-- Botón para mostrar/ocultar la barra lateral -->
         <button class="toggle-btn">☰ Índice</button>
         <ul class="indice-list">
-          <!-- Coloca aquí los enlaces a tus páginas: inicio, cada tema/subtema y referencia -->
+
           <li><a href="../index.html">Inicio</a></li>
           <li><a href="5.1.html">5.1 Principios del Hardware de E/S</a></li>
           <li><a href="5.1.1.html">5.1.1 Dispositivos de E/S</a></li>
@@ -71,7 +71,7 @@
           <li><a href="5.3.1.html">5.3.1 Manejador de Interrupciones</a></li>
           <li><a href="5.3.2.html">5.3.2 Controladores de los Dispositivos</a></li>
           <li><a href="5.3.3.html">5.3.3 Software modo usuario para E/S</a></li>
-          <!-- … más temas … -->
+
           <li><a href="../referencias.html">Referencias</a></li>
         </ul>
       </aside>
@@ -79,107 +79,36 @@
 
       <!-- ===================== ÁREA DE CONTENIDO ===================== -->
       <main class="content-area">
-        <h1 class="page-title">5.2.4 [Nombre del Tema]</h1>
+        <h1 class="page-title">5.2.4 E/S usando DMA</h1>
 
         <!-- ================ CONTENIDO DEL TEMA ================ -->
-        <!-- Aquí pegas tu investigación: texto, imágenes, videos, tablas, etc. -->
-        <!-- ================== EJEMPLOS de elementos ================== -->
-
-        <!-- == PÁRRAFOS DE TEXTO == -->
         <p>
-          En este tema veremos los aspectos fundamentales de …
+ Una limitación de la E/S controlada por interrupciones es que genera una interrupción por cada carácter, lo cual consume tiempo de CPU. Para ello, se puede optimizar este proceso se utiliza DMA (Acceso Directo a Memoria), donde un controlador de DMA se encarga de transferir los datos directamente entre la memoria y el dispositivo de E/S, sin involucrar a la CPU en cada paso. La CPU solo interviene al inicio para configurar la transferencia y al final para recibir una interrupción que indica que todo el búfer se ha procesado. Esto reduce drásticamente el número de interrupciones, pasando de una por carácter a una por cada bloque o búfer completo. Esto representa una mejora considerable, especialmente cuando se manejan grandes cantidades de datos o cuando las interrupciones son costosas.
         </p>
+<br>
         <p>
-          <!-- Más texto… -->
+ Sin embargo, el DMA no es perfecto: el controlador de DMA suele ser más lento que la CPU. Si no puede manejar el dispositivo a su máxima velocidad, o si la CPU no tiene otra tarea útil durante la espera, puede ser más eficiente usar E/S por interrupciones o incluso E/S programada.
         </p>
-
-        <!-- == IMAGEN ILUSTRATIVA == -->
-        <div style="margin: 20px 0; text-align: center;">
-          <!-- Pon aquí la imagen con tu ruta, por ejemplo:
-               <img src="../assets/tema1/diagrama.png" alt="Diagrama Tema 1" style="max-width:100%; border-radius:6px;">
-          -->
-          <img src="../assets/tema1/imagen_ejemplo.jpg" alt="Imagen Tema 1" style="max-width:100%; border-radius:6px;" />
-        </div>
-
-        <!-- == VIDEO EMBEBIDO == -->
-        <!-- Por ejemplo, si tienes un video en YouTube, usa esto: -->
-        <div style="margin: 20px 0; text-align: center;">
-          <iframe width="560" height="315"
-            src="https://www.youtube.com/embed/CÓDIGO_VIDEO"
-            title="Video Tema 1"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-          </iframe>
-        </div>
-
-        <!-- == TABLA EJEMPLO == -->
-        <h2 class="subtitulo">Tabla 1.1 – Descripción de las Extensiones</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>Extensión</th>
-              <th>Descripción</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>.c</td>
-              <td>Archivo fuente en C</td>
-            </tr>
-            <tr>
-              <td>.txt</td>
-              <td>Archivo de texto plano</td>
-            </tr>
-            <!-- Agrega más filas según lo necesites -->
-          </tbody>
-        </table>
-
-        <!-- == ACORDEÓN: BOTÓN PARA MOSTRAR DETALLES ADICIONALES == -->
-        <button class="accordion">Ver más detalles sobre X</button>
-        <div class="panel">
-          <p>
-            <!-- Aquí dentro colocas el texto que mostrará/ocultará al hacer clic en “Ver más detalles sobre X” -->
-            Estos son detalles adicionales sobre el tema…
+<br>
+        <p>
+ A pesar de esto, en la mayoría de los casos, DMA es preferible, ya que libera a la CPU para realizar otras tareas mientras se realiza la E/S. El concepto básico es similar a la E/S programada, pero el trabajo lo hace el controlador de DMA en lugar de la CPU, lo cual requiere hardware adicional.
+        </p>
+<br>
+        <div style="margin: 20x 0; text-align: center;">
+          <img src="../../assets/5.2.4_dma.png" alt="Imagen Tema 1" style="max-width:55%; border-radius:6px;" />
+      
+          <p style="font-size: 12px; color: #666; margin-top: 5px;">
+            Fuente: <a href="https://open4tech.com/direct-memory-access-dma-in-embedded-systems/" target="_blank" style="color: #666; text-decoration: none;"> E/S POR INTERRUPCIONES. (s.f.). Open4Tech Recuperado: Junio 6, 2025, de https://open4tech.com/direct-memory-access-dma-in-embedded-systems/</a>
           </p>
         </div>
 
-        <!-- ============== FIN DEL CONTENIDO DEL TEMA ============== -->
-
-        <!-- ============== BARRA DE NAVEGACIÓN ENTRE SUBTEMAS ============== -->
-        <div style="margin-top: 30px; border-top: 1px solid #ccc; padding-top: 15px;">
-          <button class="accordion">Subtema 1.1: Nombre</button>
-          <div class="panel">
-            <p>
-              <!-- Breve descripción o enlace →-->
-              <a href="subtema1_1.html">Ir a Subtema 1.1</a>
-            </p>
-          </div>
-
-          <button class="accordion">Subtema 1.2: Nombre</button>
-          <div class="panel">
-            <p>
-              <a href="subtema1_2.html">Ir a Subtema 1.2</a>
-            </p>
-          </div>
-
-          <!-- Agrega tantos subtemas (botón + panel) como necesites -->
-
-          <!-- Enlace a la actividad de este tema -->
-          <button class="accordion">Actividad del Tema 1</button>
-          <div class="panel">
-            <p>
-              <a href="../actividad.html">Ir a Actividad</a>
-            </p>
-          </div>
-
           <!-- Navegación “Anterior / Siguiente Tema” -->
           <div style="margin-top: 20px; display: flex; justify-content: space-between;">
-            <!-- Si existe tema anterior, habilita el enlace; si no, déjalo deshabilitado o quítalo -->
+
             <a href="5.2.3.html">
               <button>&laquo; Tema Anterior</button>
             </a>
-            <!-- Si existe tema siguiente -->
+
             <a href="5.3.html">
               <button>Próximo Tema &raquo;</button>
             </a>
