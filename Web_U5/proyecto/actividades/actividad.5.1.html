@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Actividad Tema 5.1</title>
+  <link rel="stylesheet" href="../../css/style.css" />
+</head>
+<body>
+  <div class="wrapper">
+    <!-- ===================== HEADER ===================== -->
+<header class="site-header">
+  <div class="header-inner">
+    <!-- --------------------------------------------
+         LOGO IZQUIERDO (clase .logo-left)
+         -------------------------------------------- -->
+    <div class="logo-left">
+      <!-- Cambia src="assets/logo-escom.png" por tu ruta real -->
+      <img src="../../assets/logo1.png" alt="Logo ESCOM" />
+    </div>
+
+    <!-- --------------------------------------------
+         TEXTO CENTRADO (clase .header-text)
+         -------------------------------------------- -->
+    <div class="header-text">
+      <p>Instituto Politécnico Nacional</p>
+      <p>Escuela Superior de Cómputo</p>
+      <p>Ingeniería en Sistemas Computacionales</p>
+      <p>Sistemas Operativos</p>
+      <p>Unidad V: Dispositivos de Entrada y Salida</p>
+    </div>
+
+    <!-- --------------------------------------------
+         LOGO DERECHO (clase .logo-right)
+         -------------------------------------------- -->
+    <div class="logo-right">
+      <!-- Cambia src="assets/logo-ipn.png" por tu ruta real -->
+      <img src="../../assets/logo2.png" alt="Logo IPN" />
+    </div>
+  </div>
+</header>
+
+    <!-- ===================== NAV PRINCIPAL ===================== -->
+    <nav class="main-nav">
+      <ul>
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="#" id="btnMostrarIndice">Índice</a></li>
+        <li><a href="../referencias.html">Referencias</a></li>
+      </ul>
+    </nav>
+
+    <!-- ===================== BARRA LATERAL (ÍNDICE) ===================== -->
+    <div class="main-container">
+      <aside class="sidebar collapsed">
+        <!-- Botón para mostrar/ocultar la barra lateral -->
+        <button class="toggle-btn">☰ Índice</button>
+        <ul class="indice-list">
+          <!-- Coloca aquí los enlaces a tus páginas: inicio, cada tema/subtema y referencia -->
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="../temas/5.1.html">5.1 Principios del Hardware de E/S</a></li>
+          <li><a href="../temas/5.1.1.html">5.1.1 Dispositivos de E/S</a></li>
+          <li><a href="../temas/5.1.2.html">5.1.2 Controladores de Dispositivos</a></li>
+          <li><a href="../temas/5.1.3.html">5.1.3 Interrupciones</a></li>
+          <li><a href="../temas/5.1.4.html">5.1.4 Acceso de Memoria Directo (DMA)</a></li>
+          <li><a href="../temas/5.2.html">5.2 Principios del Software de E/S</a></li>
+          <li><a href="../temas/5.2.1.html">5.2.1 Objetivos del Software de E/S</a></li>
+          <li><a href="../temas/5.2.2.html">5.2.2 E/S programadas</a></li>
+          <li><a href="../temas/5.2.3.html">5.2.3 E/S Manejadas por Interrupciones</a></li>
+          <li><a href="../temas/5.2.4.html">5.2.4 E/S Usando DMA</a></li>
+          <li><a href="../temas/5.3.html">5.3 Capas de Software</a></li>
+          <li><a href="../temas/5.3.1.html">5.3.1 Manejador de Interrupciones</a></li>
+          <li><a href="../temas/5.3.2.html">5.3.2 Controladores de los Dispositivos</a></li>
+          <li><a href="../temas/5.3.3.html">5.3.3 Software modo usuario para E/S</a></li>
+          <!-- … más temas … -->
+          <li><a href="../referencias.html">Referencias</a></li>
+        </ul>
+      </aside>
+
+
+      <!-- ===================== ÁREA DE CONTENIDO ===================== -->
+      <main class="content-area">
+        <h1 class="page-title">Actividad del Tema 5.1 Principios del Hardware de E/S</h1>
+
+        <!-- ======== TEMPORIZADOR ======== -->
+        <div style="margin-bottom: 20px;">
+          <strong>Tiempo restante:</strong> <span id="reloj">05:00</span>
+        </div>
+
+        <!-- ======== PREGUNTAS BASADAS EN EL TEMA DE E/S ======== -->
+<form id="form-actividad">
+
+  <!-- Pregunta 1 (radio) -->
+  <div style="margin-bottom: 15px;">
+    <p>1. ¿Cuál es una función principal del subsistema de E/S del núcleo?</p>
+    <label><input type="radio" name="pregunta1" class="respuesta" data-correcto="falso" value="a" /> Optimizar la interfaz gráfica del sistema</label><br />
+    <label><input type="radio" name="pregunta1" class="respuesta" data-correcto="verdadero" value="b" /> Aislar al resto del sistema operativo de la complejidad del manejo de dispositivos</label><br />
+    <label><input type="radio" name="pregunta1" class="respuesta" data-correcto="falso" value="c" /> Controlar el acceso de usuarios a la red</label><br />
+  </div>
+
+  <!-- Pregunta 2 (checkbox) -->
+  <div style="margin-bottom: 15px;">
+    <p>2. ¿Cuáles de los siguientes son tipos de dispositivos de E/S?</p>
+    <label><input type="checkbox" name="pregunta2" class="respuesta" data-correcto="verdadero" value="a" /> Dispositivos de almacenamiento</label><br />
+    <label><input type="checkbox" name="pregunta2" class="respuesta" data-correcto="verdadero" value="b" /> Dispositivos de transmisión</label><br />
+    <label><input type="checkbox" name="pregunta2" class="respuesta" data-correcto="falso" value="c" /> Dispositivos de compresión</label><br />
+    <label><input type="checkbox" name="pregunta2" class="respuesta" data-correcto="verdadero" value="d" /> Dispositivos de interfaz humana</label><br />
+  </div>
+
+  <!-- Pregunta 3 (radio) -->
+  <div style="margin-bottom: 15px;">
+    <p>3. ¿Qué componente permite que varios dispositivos compartan el mismo conjunto de cables?</p>
+    <label><input type="radio" name="pregunta3" class="respuesta" data-correcto="falso" value="a" /> Puerto USB</label><br />
+    <label><input type="radio" name="pregunta3" class="respuesta" data-correcto="verdadero" value="b" /> Bus</label><br />
+    <label><input type="radio" name="pregunta3" class="respuesta" data-correcto="falso" value="c" /> Controlador</label><br />
+  </div>
+
+  <!-- Pregunta 4 (checkbox) -->
+  <div style="margin-bottom: 15px;">
+    <p>4. ¿Qué funciones puede realizar un controlador integrado en un disco duro?</p>
+    <label><input type="checkbox" name="pregunta4" class="respuesta" data-correcto="verdadero" value="a" /> Gestión de errores</label><br />
+    <label><input type="checkbox" name="pregunta4" class="respuesta" data-correcto="verdadero" value="b" /> Almacenamiento en caché</label><br />
+    <label><input type="checkbox" name="pregunta4" class="respuesta" data-correcto="falso" value="c" /> Monitoreo del CPU</label><br />
+    <label><input type="checkbox" name="pregunta4" class="respuesta" data-correcto="verdadero" value="d" /> Almacenamiento en búfer</label><br />
+  </div>
+
+  <!-- Pregunta 5 (radio) -->
+  <div style="margin-bottom: 15px;">
+    <p>5. ¿Qué hace un controlador de dispositivo?</p>
+    <label><input type="radio" name="pregunta5" class="respuesta" data-correcto="falso" value="a" /> Controla directamente la energía del hardware</label><br />
+    <label><input type="radio" name="pregunta5" class="respuesta" data-correcto="falso" value="b" /> Traduce el código fuente del sistema operativo</label><br />
+    <label><input type="radio" name="pregunta5" class="respuesta" data-correcto="verdadero" value="c" /> Indica al sistema cómo comunicarse con un hardware específico</label><br />
+  </div>
+
+  <!-- Pregunta 6 (checkbox) -->
+  <div style="margin-bottom: 15px;">
+    <p>6. ¿Qué tipos de interrupciones existen?</p>
+    <label><input type="checkbox" name="pregunta6" class="respuesta" data-correcto="verdadero" value="a" /> No enmascarables</label><br />
+    <label><input type="checkbox" name="pregunta6" class="respuesta" data-correcto="verdadero" value="b" /> Enmascarables</label><br />
+    <label><input type="checkbox" name="pregunta6" class="respuesta" data-correcto="falso" value="c" /> Independientes</label><br />
+    <label><input type="checkbox" name="pregunta6" class="respuesta" data-correcto="falso" value="d" /> Seriales</label><br />
+  </div>
+
+  <!-- Pregunta 7 (radio) -->
+  <div style="margin-bottom: 15px;">
+    <p>7. ¿Qué hace el FLIH (First-Level Interrupt Handler)?</p>
+    <label><input type="radio" name="pregunta7" class="respuesta" data-correcto="falso" value="a" /> Copia los datos del dispositivo a la memoria</label><br />
+    <label><input type="radio" name="pregunta7" class="respuesta" data-correcto="verdadero" value="b" /> Realiza el cambio de contexto y registra la interrupción</label><br />
+    <label><input type="radio" name="pregunta7" class="respuesta" data-correcto="falso" value="c" /> Ejecuta el sistema operativo completo</label><br />
+  </div>
+
+  <!-- Pregunta 8 (checkbox) -->
+  <div style="margin-bottom: 15px;">
+    <p>8. ¿Qué eventos pueden generar interrupciones?</p>
+    <label><input type="checkbox" name="pregunta8" class="respuesta" data-correcto="verdadero" value="a" /> Fallos de página</label><br />
+    <label><input type="checkbox" name="pregunta8" class="respuesta" data-correcto="verdadero" value="b" /> Llamadas al sistema</label><br />
+    <label><input type="checkbox" name="pregunta8" class="respuesta" data-correcto="falso" value="c" /> Cambios en el fondo de pantalla</label><br />
+    <label><input type="checkbox" name="pregunta8" class="respuesta" data-correcto="verdadero" value="d" /> Errores como división por cero</label><br />
+  </div>
+
+  <!-- Pregunta 9 (radio) -->
+  <div style="margin-bottom: 15px;">
+    <p>9. ¿Cuál es la ventaja principal del uso de DMA frente a PIO?</p>
+    <label><input type="radio" name="pregunta9" class="respuesta" data-correcto="verdadero" value="a" /> Libera al CPU de la gestión directa de transferencias</label><br />
+    <label><input type="radio" name="pregunta9" class="respuesta" data-correcto="falso" value="b" /> Reduce el tamaño de la memoria RAM</label><br />
+    <label><input type="radio" name="pregunta9" class="respuesta" data-correcto="falso" value="c" /> Aumenta el voltaje de transferencia</label><br />
+  </div>
+
+  <!-- Pregunta 10 (checkbox) -->
+  <div style="margin-bottom: 15px;">
+    <p>10. ¿Cuáles de las siguientes afirmaciones son verdaderas sobre el DMA?</p>
+    <label><input type="checkbox" name="pregunta10" class="respuesta" data-correcto="verdadero" value="a" /> Puede transferir datos sin intervención del CPU</label><br />
+    <label><input type="checkbox" name="pregunta10" class="respuesta" data-correcto="falso" value="b" /> Solo transfiere datos en el espacio de usuario</label><br />
+    <label><input type="checkbox" name="pregunta10" class="respuesta" data-correcto="verdadero" value="c" /> Utiliza líneas de solicitud y reconocimiento (DMA-request y DMA-acknowledge)</label><br />
+    <label><input type="checkbox" name="pregunta10" class="respuesta" data-correcto="falso" value="d" /> Requiere que el CPU esté completamente detenido</label><br />
+  </div>
+
+</form>
+
+
+          <!-- Botón para validar respuestas -->
+          <input type="button" value="Validar respuestas" id="btnValidar" />
+
+          <!-- Caja donde se mostrará el resultado -->
+          <div class="resultado-actividad" style="margin-top: 10px; font-weight: bold;"></div>
+        </form>
+
+        <!-- ======== BOTÓN REINICIAR ======== -->
+        <button id="btnReiniciar">Reiniciar Actividad</button>
+      </main>
+    </div>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="site-footer">
+      <div class="footer-text">
+        Unidad V - Dispositivos de Entrada y Salida • Hecho por: Núñez Anrubio Jonathan M. & Peña Razo Christian Y. • Fecha de elaboración: [06/Jun/2025]
+      </div>
+    </footer>
+  </div>
+
+  <script src="../../js/scripts.js"></script>
+  <script>
+    // Cuando el documento esté listo, iniciamos el temporizador:
+    document.addEventListener("DOMContentLoaded", function () {
+      const reloj = document.getElementById("reloj");
+      // Ajusta 300 segundos (5 minutos) al gusto:
+      iniciarTemporizador(300, reloj, function () {
+        alert("¡Se terminó el tiempo!");
+        // Opcional: deshabilitar el botón “Validar” al acabarse el tiempo
+        document.getElementById("btnValidar").disabled = true;
+      });
+
+      // Evento para validar respuestas
+      document.getElementById("btnValidar").addEventListener("click", function () {
+        const { correctas, totales } = validarRespuestas();
+        const resultadoBox = document.querySelector(".resultado-actividad");
+        resultadoBox.textContent = `Obtuviste ${correctas} de ${totales} correctas.`;
+        // Puedes añadir lógica de puntajes extra aquí
+      });
+
+      // Evento para reiniciar la actividad
+      document.getElementById("btnReiniciar").addEventListener("click", function () {
+        reiniciarActividad("#form-actividad");
+        // Reiniciar temporizador (opcional):
+        clearInterval(); // si deseas parar el anterior
+        iniciarTemporizador(300, reloj, function () {
+          alert("¡Se terminó el tiempo!");
+          document.getElementById("btnValidar").disabled = true;
+        });
+      });
+    });
+  </script>
+</body>
+</html>

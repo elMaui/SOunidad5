@@ -42,20 +42,33 @@ document.addEventListener("DOMContentLoaded", function () {
   En las páginas de actividad, usa esta función para iniciar un temporizador.
   Ejemplo de uso en actividad-ejemplo.html (ver más abajo).
 */
+let temporizadorId = null;
+
 function iniciarTemporizador(duracionSegundos, displayElemento, callbackFinal) {
+  // Detiene el temporizador anterior si existe
+  if (temporizadorId !== null) {
+    clearInterval(temporizadorId);
+    temporizadorId = null;
+  }
+
   let tiempoRestante = duracionSegundos;
-  const intervalId = setInterval(function () {
+
+  temporizadorId = setInterval(function () {
     const minutos = Math.floor(tiempoRestante / 60);
     const segundos = tiempoRestante % 60;
+
     displayElemento.textContent = 
       (minutos < 10 ? "0" + minutos : minutos) + ":" +
       (segundos < 10 ? "0" + segundos : segundos);
+
     if (--tiempoRestante < 0) {
-      clearInterval(intervalId);
+      clearInterval(temporizadorId);
+      temporizadorId = null;
       if (typeof callbackFinal === "function") callbackFinal();
     }
   }, 1000);
-  return intervalId;
+
+  return temporizadorId;
 }
 
 /* ----------------- VALIDACIÓN DE RESPUESTAS (Ejemplo) ------------- */
@@ -67,7 +80,9 @@ function iniciarTemporizador(duracionSegundos, displayElemento, callbackFinal) {
 */
 function validarRespuestas() {
   const respuestas = document.querySelectorAll(".respuesta");
-  let correctas = 0, totales = respuestas.length;
+  let correctas = 0;
+let totales = Array.from(respuestas).filter(input => input.getAttribute("data-correcto") === "verdadero").length;
+
   respuestas.forEach((input) => {
     const esCorrecta = input.getAttribute("data-correcto") === "verdadero";
     if (input.checked && esCorrecta) {
