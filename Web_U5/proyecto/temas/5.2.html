@@ -55,7 +55,7 @@
         <!-- Botón para mostrar/ocultar la barra lateral -->
         <button class="toggle-btn">☰ Índice</button>
         <ul class="indice-list">
-          <!-- Coloca aquí los enlaces a tus páginas: inicio, cada tema/subtema y referencia -->
+  
           <li><a href="../index.html">Inicio</a></li>
           <li><a href="5.1.html">5.1 Principios del Hardware de E/S</a></li>
           <li><a href="5.1.1.html">5.1.1 Dispositivos de E/S</a></li>
@@ -71,7 +71,7 @@
           <li><a href="5.3.1.html">5.3.1 Manejador de Interrupciones</a></li>
           <li><a href="5.3.2.html">5.3.2 Controladores de los Dispositivos</a></li>
           <li><a href="5.3.3.html">5.3.3 Software modo usuario para E/S</a></li>
-          <!-- … más temas … -->
+
           <li><a href="../referencias.html">Referencias</a></li>
         </ul>
       </aside>
@@ -79,107 +79,64 @@
 
       <!-- ===================== ÁREA DE CONTENIDO ===================== -->
       <main class="content-area">
-        <h1 class="page-title">5.2 [Nombre del Tema]</h1>
+        <h1 class="page-title">5.2 Principios del software de E/S</h1>
 
         <!-- ================ CONTENIDO DEL TEMA ================ -->
-        <!-- Aquí pegas tu investigación: texto, imágenes, videos, tablas, etc. -->
-        <!-- ================== EJEMPLOS de elementos ================== -->
 
         <!-- == PÁRRAFOS DE TEXTO == -->
         <p>
-          En este tema veremos los aspectos fundamentales de …
-        </p>
-        <p>
-          <!-- Más texto… -->
+         Dejando de lado los principios del hardware de E/S, ahora tenemos que tomar en cuenta los principios del software de E/S, el cual abarca un conjunto de rutinas del sistema operativo que ayuda a gestionar la comunicación entre sistema y dispositivos (memoria y CPU). El principal propósito es abstraer la complejidad del hardware, facilitar el acceso a dispositivos y optimizar el rendimiento del sistema. Esto parte en la organización del software estableciendo capas, existiendo dos capas básicas pero importantes:
         </p>
 
-        <!-- == IMAGEN ILUSTRATIVA == -->
-        <div style="margin: 20px 0; text-align: center;">
-          <!-- Pon aquí la imagen con tu ruta, por ejemplo:
-               <img src="../assets/tema1/diagrama.png" alt="Diagrama Tema 1" style="max-width:100%; border-radius:6px;">
-          -->
-          <img src="../assets/tema1/imagen_ejemplo.jpg" alt="Imagen Tema 1" style="max-width:100%; border-radius:6px;" />
+        <!-- == ACORDEÓN: BOTÓN PARA MOSTRAR DETALLES ADICIONALES == -->
+        <button class="accordion">Capas Inferiores</button>
+        <div class="panel">
+          <p>
+            Las capas inferiores manejan o interaccionan directamente con el hardware, se encargan de los controladores de dispositivos y gestionar interrupciones, ocultando peculiaridades del hardware para que las capas superiores no las detecten.
+          </p>
+        </div>
+
+                <!-- == ACORDEÓN: BOTÓN PARA MOSTRAR DETALLES ADICIONALES == -->
+        <button class="accordion">Capas Superiores</button>
+        <div class="panel">
+          <p>
+            Las capas superiores son las encargadas de ofrecer una interfaz sencilla y uniforme a los programas de usuario, ocultando los detalles del hardware. Estas capas se comunican con las capas inferiores para realizar las operaciones físicas, pero desde el punto de vista del usuario y del programador, solo se necesita trabajar con operaciones abstractas como leer, escribir o abrir un archivo.
+          </p>
+        </div>
+
+        <p>
+          Analizaremos el tema a profundidad, iniciando por los principales objetivos del software de E/S y posteriormente las distintas maneras en las que se puede realizar la E/S desde el punto de vista del sistema operativo.
+        </p>
+
+        <div style="margin: 20px 0; text-align: left;">
+        <p style="font-size: 12px; color: #666; margin-top: 5px;">
+            Tanenbaum, A. S., & Van Steen, M. (2009). Sistemas operativos modernos: 5.2 Fundamentos del software de E/S. (3.ª ed., A. V. R. Elizondo, Trad.; J. R. R. Sánchez & A. J. Govea, Revisión técnica). Pearson Educación. p. 343
+        </p>
         </div>
 
         <!-- == VIDEO EMBEBIDO == -->
-        <!-- Por ejemplo, si tienes un video en YouTube, usa esto: -->
         <div style="margin: 20px 0; text-align: center;">
           <iframe width="560" height="315"
-            src="https://www.youtube.com/embed/CÓDIGO_VIDEO"
-            title="Video Tema 1"
+            src="https://www.youtube.com/embed/AQQJmdOy878"
+            title="Video 5.2"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen>
           </iframe>
-        </div>
-
-        <!-- == TABLA EJEMPLO == -->
-        <h2 class="subtitulo">Tabla 1.1 – Descripción de las Extensiones</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>Extensión</th>
-              <th>Descripción</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>.c</td>
-              <td>Archivo fuente en C</td>
-            </tr>
-            <tr>
-              <td>.txt</td>
-              <td>Archivo de texto plano</td>
-            </tr>
-            <!-- Agrega más filas según lo necesites -->
-          </tbody>
-        </table>
-
-        <!-- == ACORDEÓN: BOTÓN PARA MOSTRAR DETALLES ADICIONALES == -->
-        <button class="accordion">Ver más detalles sobre X</button>
-        <div class="panel">
-          <p>
-            <!-- Aquí dentro colocas el texto que mostrará/ocultará al hacer clic en “Ver más detalles sobre X” -->
-            Estos son detalles adicionales sobre el tema…
-          </p>
+        <p style="font-size: 12px; color: #666; margin-top: 5px;">
+            Fuente: <a href="https://www.youtube.com/watch?v=AQQJmdOy878" target="_blank" style="color: #666; text-decoration: none;">Antunez, V. (2018, Octubre 25). Principio del software de entradas y salidas. YouTube. Recuperado: Junio 6, 2025, de https://www.youtube.com/watch?v=AQQJmdOy878</a>
+        </p>
         </div>
 
         <!-- ============== FIN DEL CONTENIDO DEL TEMA ============== -->
 
-        <!-- ============== BARRA DE NAVEGACIÓN ENTRE SUBTEMAS ============== -->
-        <div style="margin-top: 30px; border-top: 1px solid #ccc; padding-top: 15px;">
-          <button class="accordion">Subtema 1.1: Nombre</button>
-          <div class="panel">
-            <p>
-              <!-- Breve descripción o enlace →-->
-              <a href="subtema1_1.html">Ir a Subtema 1.1</a>
-            </p>
-          </div>
-
-          <button class="accordion">Subtema 1.2: Nombre</button>
-          <div class="panel">
-            <p>
-              <a href="subtema1_2.html">Ir a Subtema 1.2</a>
-            </p>
-          </div>
-
-          <!-- Agrega tantos subtemas (botón + panel) como necesites -->
-
-          <!-- Enlace a la actividad de este tema -->
-          <button class="accordion">Actividad del Tema 1</button>
-          <div class="panel">
-            <p>
-              <a href="../actividad.html">Ir a Actividad</a>
-            </p>
-          </div>
-
           <!-- Navegación “Anterior / Siguiente Tema” -->
           <div style="margin-top: 20px; display: flex; justify-content: space-between;">
-            <!-- Si existe tema anterior, habilita el enlace; si no, déjalo deshabilitado o quítalo -->
+
             <a href="5.1.4.html">
               <button>&laquo; Tema Anterior</button>
             </a>
-            <!-- Si existe tema siguiente -->
+
             <a href="5.2.1.html">
               <button>Próximo Tema &raquo;</button>
             </a>

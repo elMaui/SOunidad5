@@ -9,6 +9,7 @@
 <body>
   <div class="wrapper">
     <!-- ===================== HEADER ===================== -->
+    <!-- ===================== HEADER ===================== -->
 <header class="site-header">
   <div class="header-inner">
     <!-- --------------------------------------------
@@ -55,7 +56,7 @@
         <!-- Botón para mostrar/ocultar la barra lateral -->
         <button class="toggle-btn">☰ Índice</button>
         <ul class="indice-list">
-          <!-- Coloca aquí los enlaces a tus páginas: inicio, cada tema/subtema y referencia -->
+
           <li><a href="index.html">Inicio</a></li>
           <li><a href="temas/5.1.html">5.1 Principios del Hardware de E/S</a></li>
           <li><a href="temas/5.1.1.html">5.1.1 Dispositivos de E/S</a></li>
@@ -71,7 +72,7 @@
           <li><a href="temas/5.3.1.html">5.3.1 Manejador de Interrupciones</a></li>
           <li><a href="temas/5.3.2.html">5.3.2 Controladores de los Dispositivos</a></li>
           <li><a href="temas/5.3.3.html">5.3.3 Software modo usuario para E/S</a></li>
-          <!-- … más temas … -->
+
           <li><a href="referencias.html">Referencias</a></li>
         </ul>
       </aside>
@@ -80,27 +81,34 @@
       <main class="content-area">
         <h1 class="page-title">Bienvenid@ a la Unidad V</h1>
 
-        <div class="row">
-          <!-- COLUMNA IZQUIERDA: TEXTO DE INICIO -->
-          <div class="col-6">
-            <!-- ================= TEXTO DE BIENVENIDA / INSTRUCCIONES ================= -->
-            <!-- Aquí coloca párrafos, listas u otro contenido textual que desees para la página de Inicio -->
+
             <p>
               <!-- TEXTO INTRODUCTORIO: -->
-              Bienvenido(a) a la Unidad V de la materia Sistemas Operativos. En esta unidad profundizaremos en…
-            </p>
-            <p>
-              <!-- Puedes agregar más párrafos, listas, etc. -->
-            </p>
-          </div>
+              Un sistema operativo no solo gestiona recursos computacionales esenciales como procesos, hilos, archivos y espacios de direcciones; también desempeña un papel clave en la administración de todos los periféricos de entrada y salida conectados al sistema. Esta responsabilidad implica coordinar la comunicación con los dispositivos, responder adecuadamente a las interrupciones generadas por ellos, y resolver fallos que puedan surgir durante su operación.
 
-          <!-- COLUMNA DERECHA: IMAGEN PRINCIPAL DE INICIO -->
-          <div class="col-6">
-            <!-- Aquí coloca una imagen grande (por ej. un banner) -->
-            <!-- <img src="ruta/a/tu_imagen_grande.jpg" alt="Imagen de la Unidad V" style="width:100%; border-radius:8px;"> -->
+Para facilitar el uso de los dispositivos, el sistema operativo ofrece una capa de abstracción que actúa como intermediaria entre el hardware y el software. Esta interfaz debe ser lo más uniforme posible para todos los tipos de dispositivos, permitiendo así que los programas puedan interactuar con ellos sin preocuparse por las diferencias específicas del hardware. Este enfoque de "independencia de dispositivo" mejora la portabilidad y simplifica el desarrollo de software.
+
+La gestión de entrada/salida representa una parte significativa del código del sistema operativo. Debido a su complejidad y su importancia para la estabilidad y eficiencia del sistema, la administración de E/S se divide en varios niveles funcionales, cada uno con responsabilidades concretas. Estos niveles cooperan para manejar solicitudes de E/S de manera ordenada, desde las llamadas del usuario hasta la ejecución física de la operación en el dispositivo.
+
+En el desarrollo de este tema, primero se exploran los fundamentos del hardware de entrada/salida: cómo se comunican los dispositivos con el procesador, los mecanismos de interrupciones, los registros de control, y las técnicas de transferencia de datos como el acceso directo a memoria (DMA). Luego se estudia el software de E/S, estructurado en capas como los controladores de dispositivos, las rutinas de manejo de interrupciones, y las interfaces de alto nivel.
+
+Posteriormente, se profundiza en el funcionamiento de dispositivos específicos, como discos duros, relojes del sistema, teclados y monitores, analizando tanto sus características físicas como los métodos empleados por el sistema operativo para controlarlos eficientemente.
+
+Finalmente, se aborda un tema cada vez más relevante: la gestión del consumo energético en sistemas modernos. Esto incluye estrategias para reducir el uso de energía sin comprometer el rendimiento, como la suspensión selectiva de dispositivos inactivos y el ajuste dinámico del rendimiento del procesador.
+            </p>
+           
+
+        <div style="margin: 20px 0; text-align: left;">
+        <p style="font-size: 12px; color: #666; margin-top: 5px;">
+            Tanenbaum, A. S., & Van Steen, M. (2009). Sistemas operativos modernos: 5.2 Fundamentos del software de E/S. (3.ª ed., A. V. R. Elizondo, Trad.; J. R. R. Sánchez & A. J. Govea, Revisión técnica). Pearson Educación. p. 329
+        </p>
+        </div>
+
             <div style="width:100%; text-align:center;">
-              <!-- Sustituye el div por un <img> con la ruta que quieras -->
-              <img src="assets/imagen_inicio.jpg" alt="Imagen Inicio Unidad V" style="max-width:100%; border-radius:8px;" />
+              <img src="../assets/index_es.png" alt="Imagen Inicio Unidad V" style="max-width:65%; border-radius:8px;" />
+          <p style="font-size: 12px; color: #666; margin-top: 5px;">
+            Fuente: <a href="https://todocontrol.club/sistemas-de-control/control-de-entrada-y-salida-sistemas-operativos/" target="_blank" style="color: #666; text-decoration: none;"> Control de entrada y salida sistemas operativos (2024, Marzo 09). Todo Control. Recuperado: Junio 6, 2025, de https://todocontrol.club/sistemas-de-control/control-de-entrada-y-salida-sistemas-operativos/</a>
+          </p>
             </div>
           </div>
         </div>
