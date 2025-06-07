@@ -243,12 +243,22 @@ nav.main-nav ul li a:hover {
   background-color: var(--color-hover);
 }
 .panel {
-  padding: 0 15px;
   display: none;
-  background-color: #f9f9f9;
   overflow: hidden;
-  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #f1f1f1;
 }
+
+.panel ul {
+  margin: 0;
+  padding-left: 20px;
+  list-style-type: disc; /* Asegura que se vean los bullets */
+}
+
+.panel ul ul {
+  list-style-type: circle; /* Sublistas con estilo diferente */
+}
+
 
 /* ==== TABLAS ==== */
 table {

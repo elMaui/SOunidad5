@@ -93,86 +93,63 @@
           <!-- Más texto… -->
         </p>
 
-        <!-- == IMAGEN ILUSTRATIVA == -->
-        <div style="margin: 20px 0; text-align: center;">
-          <!-- Pon aquí la imagen con tu ruta, por ejemplo:
-               <img src="../assets/tema1/diagrama.png" alt="Diagrama Tema 1" style="max-width:100%; border-radius:6px;">
-          -->
-          <img src="../assets/tema1/imagen_ejemplo.jpg" alt="Imagen Tema 1" style="max-width:100%; border-radius:6px;" />
-        </div>
-
         <!-- == VIDEO EMBEBIDO == -->
         <!-- Por ejemplo, si tienes un video en YouTube, usa esto: -->
         <div style="margin: 20px 0; text-align: center;">
-          <iframe width="560" height="315"
-            src="https://www.youtube.com/embed/CÓDIGO_VIDEO"
-            title="Video Tema 1"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-          </iframe>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/YiDwDRFAqcw?si=I42_epmDPMJgBmez" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
 
         <!-- == TABLA EJEMPLO == -->
-        <h2 class="subtitulo">Tabla 1.1 – Descripción de las Extensiones</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>Extensión</th>
-              <th>Descripción</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>.c</td>
-              <td>Archivo fuente en C</td>
-            </tr>
-            <tr>
-              <td>.txt</td>
-              <td>Archivo de texto plano</td>
-            </tr>
-            <!-- Agrega más filas según lo necesites -->
-          </tbody>
-        </table>
+        <h2 class="subtitulo">Funcionamiento del DMA:</h2>
 
         <!-- == ACORDEÓN: BOTÓN PARA MOSTRAR DETALLES ADICIONALES == -->
-        <button class="accordion">Ver más detalles sobre X</button>
-        <div class="panel">
-          <p>
-            <!-- Aquí dentro colocas el texto que mostrará/ocultará al hacer clic en “Ver más detalles sobre X” -->
-            Estos son detalles adicionales sobre el tema…
-          </p>
-        </div>
+        <button class="accordion">1. Inicio del DMA:</button>
+          <div class="panel">
+            <ul>
+              <li>El CPU escribe un bloque de comandos DMA en memoria con:
+                <ul>
+                  <li>Dirección de origen y destino.</li>
+                  <li>Cantidad de bytes a transferir.</li>
+                </ul>
+              </li>
+              <li>Este bloque puede incluir direcciones no contiguas (scatter–gather).</li>
+              <li>Luego, el CPU informa al controlador DMA y continúa con otras tareas.</li>
+            </ul>
+          </div>
+
+          <button class="accordion">2. Transferencia:</button>
+          <div class="panel">
+            <ul>
+              <li>El controlador DMA toma el control del bus de memoria y realiza las transferencias.</li>
+              <li>Usa cables especiales (DMA-request y DMA-acknowledge) para coordinarse con el controlador del dispositivo.</li>
+              <li>Una vez finalizada la transferencia, el DMA interrumpe al CPU para notificar la finalización.</li>
+            </ul>
+          </div>
+          <button class="accordion">3.	Impacto en el CPU:</button>
+          <div class="panel">
+            <ul>
+              <li>Durante la transferencia, el CPU puede ser momentáneamente bloqueado del acceso a la RAM (cycle stealing), pero puede seguir usando su caché.</li>
+            </ul>
+          </div>
+          <button class="accordion">4.	Dirección de la memoria:</button>
+          <div class="panel">
+            <ul>
+              <li>Generalmente, la transferencia se hace en espacio de memoria del kernel.</li>
+              <li>Si se requiere acceder desde espacio de usuario, se necesita una copia adicional, lo que es ineficiente.</li>
+              <li>Para evitarlo, los sistemas modernos usan mapeo de memoria para permitir transferencias directas hacia/desde el espacio de usuario.</li>
+            </ul>
+          </div>
+          <button class="accordion">5.	Acceso y seguridad:</button>
+          <div class="panel">
+            <ul>
+              <li>En sistemas con protección de memoria, solo el sistema operativo puede emitir comandos a los dispositivos.</li>
+              <li>En sistemas sin protección, los procesos pueden acceder directamente a los controladores, lo que mejora el rendimiento, pero compromete la seguridad y estabilidad.</li>
+            </ul>
+          </div>
 
         <!-- ============== FIN DEL CONTENIDO DEL TEMA ============== -->
 
-        <!-- ============== BARRA DE NAVEGACIÓN ENTRE SUBTEMAS ============== -->
-        <div style="margin-top: 30px; border-top: 1px solid #ccc; padding-top: 15px;">
-          <button class="accordion">Subtema 1.1: Nombre</button>
-          <div class="panel">
-            <p>
-              <!-- Breve descripción o enlace →-->
-              <a href="subtema1_1.html">Ir a Subtema 1.1</a>
-            </p>
-          </div>
-
-          <button class="accordion">Subtema 1.2: Nombre</button>
-          <div class="panel">
-            <p>
-              <a href="subtema1_2.html">Ir a Subtema 1.2</a>
-            </p>
-          </div>
-
-          <!-- Agrega tantos subtemas (botón + panel) como necesites -->
-
-          <!-- Enlace a la actividad de este tema -->
-          <button class="accordion">Actividad del Tema 1</button>
-          <div class="panel">
-            <p>
-              <a href="../actividad.html">Ir a Actividad</a>
-            </p>
-          </div>
-
+        
           <!-- Navegación “Anterior / Siguiente Tema” -->
           <div style="margin-top: 20px; display: flex; justify-content: space-between;">
             <!-- Si existe tema anterior, habilita el enlace; si no, déjalo deshabilitado o quítalo -->
